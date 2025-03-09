@@ -46,7 +46,7 @@ public class PosariMain extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jButton26 = new javax.swing.JButton();
-        jButton27 = new javax.swing.JButton();
+        jbtnMinMaid = new javax.swing.JButton();
         jButton28 = new javax.swing.JButton();
         jButton29 = new javax.swing.JButton();
         jButton30 = new javax.swing.JButton();
@@ -229,10 +229,10 @@ public class PosariMain extends javax.swing.JFrame {
             }
         });
 
-        jButton27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Minutemaid.jpg"))); // NOI18N
-        jButton27.addActionListener(new java.awt.event.ActionListener() {
+        jbtnMinMaid.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Minutemaid.jpg"))); // NOI18N
+        jbtnMinMaid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton27ActionPerformed(evt);
+                jbtnMinMaidActionPerformed(evt);
             }
         });
 
@@ -360,7 +360,7 @@ public class PosariMain extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbtnMinMaid, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
@@ -408,7 +408,7 @@ public class PosariMain extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addComponent(jButton27, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jbtnMinMaid, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
                             .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jbtnMinWater, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -791,9 +791,14 @@ public class PosariMain extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton26ActionPerformed
 
-    private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
+    private void jbtnMinMaidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnMinMaidActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton27ActionPerformed
+        double PriceOfItem = 15.05;
+        //dont forget to add impot on DefaultTableModel btw, idk
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.addRow(new Object[]{"Minute Maid", "1",PriceOfItem });
+        ItemCost();
+    }//GEN-LAST:event_jbtnMinMaidActionPerformed
 
     private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
         // TODO add your handling code here:
@@ -930,7 +935,6 @@ public class PosariMain extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton26;
-    private javax.swing.JButton jButton27;
     private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton30;
@@ -989,6 +993,7 @@ public class PosariMain extends javax.swing.JFrame {
     private javax.swing.JButton jbtnClear;
     private javax.swing.JButton jbtnDot;
     private javax.swing.JButton jbtnExit;
+    private javax.swing.JButton jbtnMinMaid;
     private javax.swing.JButton jbtnMinWater;
     private javax.swing.JButton jbtnPay;
     private javax.swing.JButton jbtnPrint;

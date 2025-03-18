@@ -597,6 +597,11 @@ public class PosariMain extends javax.swing.JFrame {
 
         jbtnRemove.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jbtnRemove.setText("Remove");
+        jbtnRemove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnRemoveActionPerformed(evt);
+            }
+        });
         jPanel16.add(jbtnRemove, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 190, 60));
 
         jPanel8.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 30, 420, 200));
@@ -618,13 +623,13 @@ public class PosariMain extends javax.swing.JFrame {
         double cTotall = Double.parseDouble(jtxtSubTotal.getText());
         
         double cTax = (cTotall * 3.9)/100;
-        String iTaxTotal = String.format("£ %.2f", cTax);
+        String iTaxTotal = String.format("₱ %.2f", cTax);
         jtxtTax.setText(iTaxTotal);
         
-        String iSubTotal = String.format("£ %.2f", cTotall);
+        String iSubTotal = String.format("₱ %.2f", cTotall);
         jtxtSubTotal.setText(iSubTotal);
         
-        String iTotal = String.format("£ %.2f", cTotall + cTax);
+        String iTotal = String.format("₱ %.2f", cTotall + cTax);
         jtxtTotal.setText(iTotal);
         
          //String BarCode = String.format("Total is %.2f", cTotall + cTax);
@@ -647,7 +652,7 @@ public class PosariMain extends javax.swing.JFrame {
         double cTax = (sum * 3.9)/100;
         double cChange = (cash - (sum + cTax));
         
-        String ChangeGiven = String.format("£ %.2f", cChange );
+        String ChangeGiven = String.format("₱ %.2f", cChange );
         jtxtChange.setText(ChangeGiven);
     }
     
@@ -817,7 +822,12 @@ public class PosariMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnExitActionPerformed
 
     private void jbtnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnResetActionPerformed
-        // TODO add your handling code here:
+    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+    model.setRowCount(0);
+    jtxtChange.setText("");
+    jtxtTax.setText("");
+    jtxtTotal.setText("");
+    jtxtDisplay.setText("");
     }//GEN-LAST:event_jbtnResetActionPerformed
 
     private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
@@ -897,6 +907,17 @@ public class PosariMain extends javax.swing.JFrame {
     private void jtxtTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtTotalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtxtTotalActionPerformed
+
+    private void jbtnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRemoveActionPerformed
+    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+    int RemoveItem = jTable1.getSelectedRow();
+    if(RemoveItem >= 0)
+    {
+        model.removeRow(RemoveItem);
+    }
+        
+    ItemCost();
+    }//GEN-LAST:event_jbtnRemoveActionPerformed
 
     /**
      * @param args the command line arguments

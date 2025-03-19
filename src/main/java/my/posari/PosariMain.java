@@ -4,6 +4,7 @@
  */
 package my.posari;
 
+import java.text.DecimalFormat;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -45,18 +46,18 @@ public class PosariMain extends javax.swing.JFrame {
         jbtn0 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        jButton26 = new javax.swing.JButton();
+        jbtnCupnoodles = new javax.swing.JButton();
         jbtnMinMaid = new javax.swing.JButton();
-        jButton28 = new javax.swing.JButton();
+        jbtnGAlcohol = new javax.swing.JButton();
         jButton29 = new javax.swing.JButton();
-        jButton30 = new javax.swing.JButton();
-        jButton31 = new javax.swing.JButton();
-        jButton32 = new javax.swing.JButton();
-        jButton33 = new javax.swing.JButton();
+        jbtnLuncheonmeat = new javax.swing.JButton();
+        jbtnFitnright = new javax.swing.JButton();
+        jtbnInstantmami = new javax.swing.JButton();
+        jtbnJollycorn = new javax.swing.JButton();
         jbtnMinWater = new javax.swing.JButton();
-        jButton35 = new javax.swing.JButton();
-        jButton36 = new javax.swing.JButton();
-        jButton37 = new javax.swing.JButton();
+        jbtnSardines = new javax.swing.JButton();
+        jbtnSpicynoodles = new javax.swing.JButton();
+        jbtnPepsi = new javax.swing.JButton();
         jButton54 = new javax.swing.JButton();
         jButton55 = new javax.swing.JButton();
         jButton56 = new javax.swing.JButton();
@@ -222,10 +223,10 @@ public class PosariMain extends javax.swing.JFrame {
         jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BifChocoDip.jpg"))); // NOI18N
-        jButton26.addActionListener(new java.awt.event.ActionListener() {
+        jbtnCupnoodles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BifChocoDip.jpg"))); // NOI18N
+        jbtnCupnoodles.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton26ActionPerformed(evt);
+                jbtnCupnoodlesActionPerformed(evt);
             }
         });
 
@@ -236,9 +237,10 @@ public class PosariMain extends javax.swing.JFrame {
             }
         });
 
-        jButton28.addActionListener(new java.awt.event.ActionListener() {
+        jbtnGAlcohol.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/GAlcohol.jpg"))); // NOI18N
+        jbtnGAlcohol.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton28ActionPerformed(evt);
+                jbtnGAlcoholActionPerformed(evt);
             }
         });
 
@@ -248,31 +250,31 @@ public class PosariMain extends javax.swing.JFrame {
             }
         });
 
-        jButton30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BeefLoaf.jpg"))); // NOI18N
-        jButton30.addActionListener(new java.awt.event.ActionListener() {
+        jbtnLuncheonmeat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BeefLoaf.jpg"))); // NOI18N
+        jbtnLuncheonmeat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton30ActionPerformed(evt);
+                jbtnLuncheonmeatActionPerformed(evt);
             }
         });
 
-        jButton31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Fit_nRight.jpg"))); // NOI18N
-        jButton31.addActionListener(new java.awt.event.ActionListener() {
+        jbtnFitnright.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Fit_nRight.jpg"))); // NOI18N
+        jbtnFitnright.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton31ActionPerformed(evt);
+                jbtnFitnrightActionPerformed(evt);
             }
         });
 
-        jButton32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/InstantNoodles.jpg"))); // NOI18N
-        jButton32.addActionListener(new java.awt.event.ActionListener() {
+        jtbnInstantmami.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/InstantNoodles.jpg"))); // NOI18N
+        jtbnInstantmami.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton32ActionPerformed(evt);
+                jtbnInstantmamiActionPerformed(evt);
             }
         });
 
-        jButton33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/JollyCorn.jpg"))); // NOI18N
-        jButton33.addActionListener(new java.awt.event.ActionListener() {
+        jtbnJollycorn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/JollyCorn.jpg"))); // NOI18N
+        jtbnJollycorn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton33ActionPerformed(evt);
+                jtbnJollycornActionPerformed(evt);
             }
         });
 
@@ -283,45 +285,49 @@ public class PosariMain extends javax.swing.JFrame {
             }
         });
 
-        jButton35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Sardinas.jpg"))); // NOI18N
-        jButton35.addActionListener(new java.awt.event.ActionListener() {
+        jbtnSardines.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Sardinas.jpg"))); // NOI18N
+        jbtnSardines.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton35ActionPerformed(evt);
+                jbtnSardinesActionPerformed(evt);
             }
         });
 
-        jButton36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BifChocoDip.jpg"))); // NOI18N
-        jButton36.addActionListener(new java.awt.event.ActionListener() {
+        jbtnSpicynoodles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BifChocoDip.jpg"))); // NOI18N
+        jbtnSpicynoodles.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton36ActionPerformed(evt);
+                jbtnSpicynoodlesActionPerformed(evt);
             }
         });
 
-        jButton37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pepsi.jpg"))); // NOI18N
-        jButton37.addActionListener(new java.awt.event.ActionListener() {
+        jbtnPepsi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pepsi.jpg"))); // NOI18N
+        jbtnPepsi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton37ActionPerformed(evt);
+                jbtnPepsiActionPerformed(evt);
             }
         });
 
+        jButton54.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/RMouthwash.jpg"))); // NOI18N
         jButton54.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton54ActionPerformed(evt);
             }
         });
 
+        jButton55.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Safeguard.jpg"))); // NOI18N
         jButton55.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton55ActionPerformed(evt);
             }
         });
 
+        jButton56.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Kojic.jpg"))); // NOI18N
         jButton56.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton56ActionPerformed(evt);
             }
         });
 
+        jButton57.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Maylotion.jpg"))); // NOI18N
         jButton57.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton57ActionPerformed(evt);
@@ -359,32 +365,32 @@ public class PosariMain extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbtnCupnoodles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jbtnMinMaid, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbtnGAlcohol, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton30, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbtnLuncheonmeat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jbtnMinWater, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton54, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton58, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton35, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton31, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbtnSardines, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbtnFitnright, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton55, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton59, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton36, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton32, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbtnSpicynoodles, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtbnInstantmami, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton56, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton60, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbtnPepsi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jtbnJollycorn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton57, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton61, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(33, Short.MAX_VALUE))
@@ -399,31 +405,31 @@ public class PosariMain extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton26, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton30, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton33, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton32, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton31, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jbtnCupnoodles, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbtnLuncheonmeat, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtbnJollycorn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtbnInstantmami, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbtnFitnright, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel3Layout.createSequentialGroup()
                             .addComponent(jbtnMinMaid, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
-                            .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jbtnGAlcohol, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jbtnMinWater, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                            .addComponent(jButton36, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jbtnSpicynoodles, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
                             .addComponent(jButton56, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addComponent(jButton35, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jbtnSardines, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
                             .addComponent(jButton55, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jButton54, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jButton37, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jbtnPepsi, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton57, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
@@ -791,10 +797,16 @@ public class PosariMain extends javax.swing.JFrame {
                          }
     }//GEN-LAST:event_jbtn0ActionPerformed
 
-    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
-        // TODO add your handling code here:
+    private void jbtnCupnoodlesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnCupnoodlesActionPerformed
+         // TODO add your handling code here:
+        double PriceOfItem = 75.30;
+        DecimalFormat df = new DecimalFormat("0.00");
+        //dont forget to add impot on DefaultTableModel btw, idk
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.addRow(new Object[]{"Cup Noodles", "1",df.format(PriceOfItem)});
+        ItemCost();
 
-    }//GEN-LAST:event_jButton26ActionPerformed
+    }//GEN-LAST:event_jbtnCupnoodlesActionPerformed
 
     private void jbtnMinMaidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnMinMaidActionPerformed
         // TODO add your handling code here:
@@ -805,9 +817,15 @@ public class PosariMain extends javax.swing.JFrame {
         ItemCost();
     }//GEN-LAST:event_jbtnMinMaidActionPerformed
 
-    private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
+    private void jbtnGAlcoholActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnGAlcoholActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton28ActionPerformed
+        double PriceOfItem = 35.20;
+        DecimalFormat df = new DecimalFormat("0.00");
+        //dont forget to add impot on DefaultTableModel btw, idk
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.addRow(new Object[]{"GreenCross Alchohol", "1",df.format(PriceOfItem)});
+        ItemCost();
+    }//GEN-LAST:event_jbtnGAlcoholActionPerformed
 
     private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
         // TODO add your handling code here:
@@ -830,57 +848,119 @@ public class PosariMain extends javax.swing.JFrame {
     jtxtDisplay.setText("");
     }//GEN-LAST:event_jbtnResetActionPerformed
 
-    private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton30ActionPerformed
+    private void jbtnLuncheonmeatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnLuncheonmeatActionPerformed
+         // TODO add your handling code here:
+        double PriceOfItem = 20.50;
+         DecimalFormat df = new DecimalFormat("0.00");
+        //dont forget to add impot on DefaultTableModel btw, idk
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.addRow(new Object[]{"Holiday Luncheon Meat  ", "1",df.format(PriceOfItem) });
+        ItemCost();
+    }//GEN-LAST:event_jbtnLuncheonmeatActionPerformed
 
-    private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton31ActionPerformed
+    private void jbtnFitnrightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnFitnrightActionPerformed
+         // TODO add your handling code here:
+        double PriceOfItem = 58.80;
+        DecimalFormat df = new DecimalFormat("0.00");
+        //dont forget to add impot on DefaultTableModel btw, idk
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.addRow(new Object[]{"Fit n Right", "1",df.format(PriceOfItem) });
+        ItemCost();
+    }//GEN-LAST:event_jbtnFitnrightActionPerformed
 
-    private void jButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton32ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton32ActionPerformed
+    private void jtbnInstantmamiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtbnInstantmamiActionPerformed
+         // TODO add your handling code here:
+        double PriceOfItem = 10.80;
+        DecimalFormat df = new DecimalFormat("0.00");
+        //dont forget to add impot on DefaultTableModel btw, idk
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.addRow(new Object[]{"Instant Mami", "1",df.format(PriceOfItem) });
+        ItemCost();
+    }//GEN-LAST:event_jtbnInstantmamiActionPerformed
 
-    private void jButton33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton33ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton33ActionPerformed
+    private void jtbnJollycornActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtbnJollycornActionPerformed
+         // TODO add your handling code here:
+        double PriceOfItem = 43.15;
+        //dont forget to add impot on DefaultTableModel btw, idk
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.addRow(new Object[]{"Jolly Can Corn", "1",PriceOfItem });
+        ItemCost();
+    }//GEN-LAST:event_jtbnJollycornActionPerformed
 
     private void jbtnMinWaterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnMinWaterActionPerformed
         // TODO add your handling code here:
         double PriceOfItem = 6.70;
+        DecimalFormat df = new DecimalFormat("0.00");
         //dont forget to add impot on DefaultTableModel btw, idk
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.addRow(new Object[]{"Mineral Water", "1",PriceOfItem });
+        model.addRow(new Object[]{"Mineral Water", "1",df.format(PriceOfItem) });
         ItemCost();
     }//GEN-LAST:event_jbtnMinWaterActionPerformed
 
-    private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton35ActionPerformed
+    private void jbtnSardinesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSardinesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton35ActionPerformed
+        double PriceOfItem = 18.99;
+        //dont forget to add impot on DefaultTableModel btw, idk
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.addRow(new Object[]{"Mega Sardines", "1",PriceOfItem });
+        ItemCost();
+    }//GEN-LAST:event_jbtnSardinesActionPerformed
 
-    private void jButton36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton36ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton36ActionPerformed
+    private void jbtnSpicynoodlesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSpicynoodlesActionPerformed
+         // TODO add your handling code here:
+        double PriceOfItem = 75.30;
+        DecimalFormat df = new DecimalFormat("0.00");
+        //dont forget to add impot on DefaultTableModel btw, idk
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.addRow(new Object[]{"Spicy Cup Noodles", "1",df.format(PriceOfItem) });
+        ItemCost();
+    }//GEN-LAST:event_jbtnSpicynoodlesActionPerformed
 
-    private void jButton37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton37ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton37ActionPerformed
+    private void jbtnPepsiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnPepsiActionPerformed
+         // TODO add your handling code here:
+        double PriceOfItem = 32.50;
+        DecimalFormat df = new DecimalFormat("0.00");
+        //dont forget to add impot on DefaultTableModel btw, idk
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.addRow(new Object[]{"Pepsi Cola", "1",df.format(PriceOfItem) });
+        ItemCost();
+    }//GEN-LAST:event_jbtnPepsiActionPerformed
 
     private void jButton54ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton54ActionPerformed
-        // TODO add your handling code here:
+         // TODO add your handling code here:
+        double PriceOfItem = 29.50;
+        DecimalFormat df = new DecimalFormat("0.00");
+        //dont forget to add impot on DefaultTableModel btw, idk
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.addRow(new Object[]{"Colgate Mouth-wash", "1",df.format(PriceOfItem) });
+        ItemCost();
     }//GEN-LAST:event_jButton54ActionPerformed
 
     private void jButton55ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton55ActionPerformed
-        // TODO add your handling code here:
+         // TODO add your handling code here:
+        double PriceOfItem = 45.75;
+        //dont forget to add impot on DefaultTableModel btw, idk
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.addRow(new Object[]{"Safeguard soap", "1",PriceOfItem });
+        ItemCost();
     }//GEN-LAST:event_jButton55ActionPerformed
 
     private void jButton56ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton56ActionPerformed
-        // TODO add your handling code here:
+         // TODO add your handling code here:
+        double PriceOfItem = 48.25;
+        //dont forget to add impot on DefaultTableModel btw, idk
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.addRow(new Object[]{"Kojic soap", "1",PriceOfItem });
+        ItemCost();
     }//GEN-LAST:event_jButton56ActionPerformed
 
     private void jButton57ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton57ActionPerformed
-        // TODO add your handling code here:
+         // TODO add your handling code here:
+        double PriceOfItem = 68.75;
+        //dont forget to add impot on DefaultTableModel btw, idk
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.addRow(new Object[]{"Maya lotion", "1",PriceOfItem });
+        ItemCost();
     }//GEN-LAST:event_jButton57ActionPerformed
 
     private void jButton58ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton58ActionPerformed
@@ -955,16 +1035,7 @@ public class PosariMain extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton26;
-    private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton29;
-    private javax.swing.JButton jButton30;
-    private javax.swing.JButton jButton31;
-    private javax.swing.JButton jButton32;
-    private javax.swing.JButton jButton33;
-    private javax.swing.JButton jButton35;
-    private javax.swing.JButton jButton36;
-    private javax.swing.JButton jButton37;
     private javax.swing.JButton jButton54;
     private javax.swing.JButton jButton55;
     private javax.swing.JButton jButton56;
@@ -1012,14 +1083,23 @@ public class PosariMain extends javax.swing.JFrame {
     private javax.swing.JButton jbtn8;
     private javax.swing.JButton jbtn9;
     private javax.swing.JButton jbtnClear;
+    private javax.swing.JButton jbtnCupnoodles;
     private javax.swing.JButton jbtnDot;
     private javax.swing.JButton jbtnExit;
+    private javax.swing.JButton jbtnFitnright;
+    private javax.swing.JButton jbtnGAlcohol;
+    private javax.swing.JButton jbtnLuncheonmeat;
     private javax.swing.JButton jbtnMinMaid;
     private javax.swing.JButton jbtnMinWater;
     private javax.swing.JButton jbtnPay;
+    private javax.swing.JButton jbtnPepsi;
     private javax.swing.JButton jbtnPrint;
     private javax.swing.JButton jbtnRemove;
     private javax.swing.JButton jbtnReset;
+    private javax.swing.JButton jbtnSardines;
+    private javax.swing.JButton jbtnSpicynoodles;
+    private javax.swing.JButton jtbnInstantmami;
+    private javax.swing.JButton jtbnJollycorn;
     private javax.swing.JTextField jtxtChange;
     private javax.swing.JTextField jtxtDisplay;
     private javax.swing.JTextField jtxtSubTotal;

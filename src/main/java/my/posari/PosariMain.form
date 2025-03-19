@@ -398,7 +398,7 @@
         <Component class="javax.swing.JButton" name="jbtnGAlcohol">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/GAlcohol.jpg"/>
+              <Image iconType="3" name="/images/alcohol.jpg"/>
             </Property>
           </Properties>
           <Events>
@@ -493,7 +493,7 @@
         <Component class="javax.swing.JButton" name="jButton54">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/RMouthwash.jpg"/>
+              <Image iconType="3" name="/images/colgate.jpg"/>
             </Property>
           </Properties>
           <Events>
@@ -503,7 +503,7 @@
         <Component class="javax.swing.JButton" name="jButton55">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/Safeguard.jpg"/>
+              <Image iconType="3" name="/images/safeguard.jpg"/>
             </Property>
           </Properties>
           <Events>
@@ -513,7 +513,7 @@
         <Component class="javax.swing.JButton" name="jButton56">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/Kojic.jpg"/>
+              <Image iconType="3" name="/images/kojic.jpg"/>
             </Property>
           </Properties>
           <Events>
@@ -523,7 +523,7 @@
         <Component class="javax.swing.JButton" name="jButton57">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/Maylotion.jpg"/>
+              <Image iconType="3" name="/images/maya.jpg"/>
             </Property>
           </Properties>
           <Events>
@@ -765,6 +765,9 @@
                   <Font name="Tahoma" size="24" style="1"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtxtSubTotalActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="180" y="22" width="220" height="50"/>
@@ -990,7 +993,7 @@
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="60" y="130" width="330" height="60"/>
+                  <AbsoluteConstraints x="50" y="130" width="330" height="60"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -1006,7 +1009,7 @@
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="10" y="10" width="190" height="60"/>
+                  <AbsoluteConstraints x="10" y="10" width="190" height="50"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -1022,7 +1025,7 @@
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="220" y="10" width="190" height="60"/>
+                  <AbsoluteConstraints x="220" y="10" width="190" height="50"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -1038,7 +1041,7 @@
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="10" y="70" width="190" height="60"/>
+                  <AbsoluteConstraints x="10" y="70" width="190" height="50"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -1054,7 +1057,7 @@
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="220" y="70" width="190" height="60"/>
+                  <AbsoluteConstraints x="220" y="70" width="190" height="50"/>
                 </Constraint>
               </Constraints>
             </Component>

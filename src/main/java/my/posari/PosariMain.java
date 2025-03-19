@@ -237,7 +237,7 @@ public class PosariMain extends javax.swing.JFrame {
             }
         });
 
-        jbtnGAlcohol.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/GAlcohol.jpg"))); // NOI18N
+        jbtnGAlcohol.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/alcohol.jpg"))); // NOI18N
         jbtnGAlcohol.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtnGAlcoholActionPerformed(evt);
@@ -306,28 +306,28 @@ public class PosariMain extends javax.swing.JFrame {
             }
         });
 
-        jButton54.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/RMouthwash.jpg"))); // NOI18N
+        jButton54.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/colgate.jpg"))); // NOI18N
         jButton54.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton54ActionPerformed(evt);
             }
         });
 
-        jButton55.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Safeguard.jpg"))); // NOI18N
+        jButton55.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/safeguard.jpg"))); // NOI18N
         jButton55.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton55ActionPerformed(evt);
             }
         });
 
-        jButton56.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Kojic.jpg"))); // NOI18N
+        jButton56.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/kojic.jpg"))); // NOI18N
         jButton56.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton56ActionPerformed(evt);
             }
         });
 
-        jButton57.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Maylotion.jpg"))); // NOI18N
+        jButton57.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/maya.jpg"))); // NOI18N
         jButton57.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton57ActionPerformed(evt);
@@ -508,6 +508,11 @@ public class PosariMain extends javax.swing.JFrame {
         jPanel2.add(jtxtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 220, 50));
 
         jtxtSubTotal.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jtxtSubTotal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtSubTotalActionPerformed(evt);
+            }
+        });
         jPanel2.add(jtxtSubTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 22, 220, 50));
 
         jtxtTax.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -572,7 +577,7 @@ public class PosariMain extends javax.swing.JFrame {
                 jbtnExitActionPerformed(evt);
             }
         });
-        jPanel16.add(jbtnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 330, 60));
+        jPanel16.add(jbtnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 330, 60));
 
         jbtnPay.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jbtnPay.setText("Pay");
@@ -581,7 +586,7 @@ public class PosariMain extends javax.swing.JFrame {
                 jbtnPayActionPerformed(evt);
             }
         });
-        jPanel16.add(jbtnPay, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 190, 60));
+        jPanel16.add(jbtnPay, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 190, 50));
 
         jbtnReset.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jbtnReset.setText("Reset");
@@ -590,7 +595,7 @@ public class PosariMain extends javax.swing.JFrame {
                 jbtnResetActionPerformed(evt);
             }
         });
-        jPanel16.add(jbtnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 190, 60));
+        jPanel16.add(jbtnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 190, 50));
 
         jbtnPrint.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jbtnPrint.setText("Print");
@@ -599,7 +604,7 @@ public class PosariMain extends javax.swing.JFrame {
                 jbtnPrintActionPerformed(evt);
             }
         });
-        jPanel16.add(jbtnPrint, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 190, 60));
+        jPanel16.add(jbtnPrint, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 190, 50));
 
         jbtnRemove.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jbtnRemove.setText("Remove");
@@ -608,7 +613,7 @@ public class PosariMain extends javax.swing.JFrame {
                 jbtnRemoveActionPerformed(evt);
             }
         });
-        jPanel16.add(jbtnRemove, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 190, 60));
+        jPanel16.add(jbtnRemove, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 190, 50));
 
         jPanel8.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 30, 420, 200));
 
@@ -998,6 +1003,10 @@ public class PosariMain extends javax.swing.JFrame {
         
     ItemCost();
     }//GEN-LAST:event_jbtnRemoveActionPerformed
+
+    private void jtxtSubTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtSubTotalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxtSubTotalActionPerformed
 
     /**
      * @param args the command line arguments

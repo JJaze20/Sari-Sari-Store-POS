@@ -91,7 +91,7 @@ public class PosariMain extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jtxtChange = new javax.swing.JTextField();
         jtxtDisplay = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jcboPayment = new javax.swing.JComboBox<>();
         jPanel16 = new javax.swing.JPanel();
         jPanel17 = new javax.swing.JPanel();
         jPanel18 = new javax.swing.JPanel();
@@ -551,9 +551,14 @@ public class PosariMain extends javax.swing.JFrame {
         jtxtDisplay.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jPanel12.add(jtxtDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 200, 50));
 
-        jComboBox1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cash", "Visa Card", "Master Card" }));
-        jPanel12.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 12, 200, 50));
+        jcboPayment.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jcboPayment.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cash", "Visa Card", "Master Card" }));
+        jcboPayment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcboPaymentActionPerformed(evt);
+            }
+        });
+        jPanel12.add(jcboPayment, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 12, 200, 50));
 
         jPanel8.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 30, 420, 200));
 
@@ -851,6 +856,7 @@ public class PosariMain extends javax.swing.JFrame {
     jtxtTax.setText("");
     jtxtTotal.setText("");
     jtxtDisplay.setText("");
+    jtxtSubTotal.setText("");
     }//GEN-LAST:event_jbtnResetActionPerformed
 
     private void jbtnLuncheonmeatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnLuncheonmeatActionPerformed
@@ -985,8 +991,15 @@ public class PosariMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton61ActionPerformed
 
     private void jbtnPayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnPayActionPerformed
-        // TODO add your handling code here:
-        
+    if (jcboPayment.getSelectedItem().equals("Cash"))
+    {
+        Change();
+    }
+        else
+    {
+        jtxtChange.setText("");
+        jtxtDisplay.setText("");
+    }
     }//GEN-LAST:event_jbtnPayActionPerformed
 
     private void jtxtTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtTotalActionPerformed
@@ -1007,6 +1020,10 @@ public class PosariMain extends javax.swing.JFrame {
     private void jtxtSubTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtSubTotalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtxtSubTotalActionPerformed
+
+    private void jcboPaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcboPaymentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jcboPaymentActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1053,7 +1070,6 @@ public class PosariMain extends javax.swing.JFrame {
     private javax.swing.JButton jButton59;
     private javax.swing.JButton jButton60;
     private javax.swing.JButton jButton61;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -1107,6 +1123,7 @@ public class PosariMain extends javax.swing.JFrame {
     private javax.swing.JButton jbtnReset;
     private javax.swing.JButton jbtnSardines;
     private javax.swing.JButton jbtnSpicynoodles;
+    private javax.swing.JComboBox<String> jcboPayment;
     private javax.swing.JButton jtbnInstantmami;
     private javax.swing.JButton jtbnJollycorn;
     private javax.swing.JTextField jtxtChange;

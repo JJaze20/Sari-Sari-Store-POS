@@ -49,7 +49,7 @@ public class PosariMain extends javax.swing.JFrame {
         jbtnCupnoodles = new javax.swing.JButton();
         jbtnMinMaid = new javax.swing.JButton();
         jbtnGAlcohol = new javax.swing.JButton();
-        jButton29 = new javax.swing.JButton();
+        jbtnPencil = new javax.swing.JButton();
         jbtnLuncheonmeat = new javax.swing.JButton();
         jbtnFitnright = new javax.swing.JButton();
         jtbnInstantmami = new javax.swing.JButton();
@@ -62,10 +62,10 @@ public class PosariMain extends javax.swing.JFrame {
         jButton55 = new javax.swing.JButton();
         jButton56 = new javax.swing.JButton();
         jButton57 = new javax.swing.JButton();
-        jButton58 = new javax.swing.JButton();
-        jButton59 = new javax.swing.JButton();
-        jButton60 = new javax.swing.JButton();
-        jButton61 = new javax.swing.JButton();
+        jbtnNotebook = new javax.swing.JButton();
+        jbtnGlue = new javax.swing.JButton();
+        jbtnYellowPad = new javax.swing.JButton();
+        jbtnCrayola = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jPanel8 = new javax.swing.JPanel();
@@ -244,9 +244,10 @@ public class PosariMain extends javax.swing.JFrame {
             }
         });
 
-        jButton29.addActionListener(new java.awt.event.ActionListener() {
+        jbtnPencil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pencil.jpg"))); // NOI18N
+        jbtnPencil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton29ActionPerformed(evt);
+                jbtnPencilActionPerformed(evt);
             }
         });
 
@@ -334,27 +335,31 @@ public class PosariMain extends javax.swing.JFrame {
             }
         });
 
-        jButton58.addActionListener(new java.awt.event.ActionListener() {
+        jbtnNotebook.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/notebooks.jpg"))); // NOI18N
+        jbtnNotebook.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton58ActionPerformed(evt);
+                jbtnNotebookActionPerformed(evt);
             }
         });
 
-        jButton59.addActionListener(new java.awt.event.ActionListener() {
+        jbtnGlue.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/glue.jpg"))); // NOI18N
+        jbtnGlue.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton59ActionPerformed(evt);
+                jbtnGlueActionPerformed(evt);
             }
         });
 
-        jButton60.addActionListener(new java.awt.event.ActionListener() {
+        jbtnYellowPad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/yellowpadzz.jpg"))); // NOI18N
+        jbtnYellowPad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton60ActionPerformed(evt);
+                jbtnYellowPadActionPerformed(evt);
             }
         });
 
-        jButton61.addActionListener(new java.awt.event.ActionListener() {
+        jbtnCrayola.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Crayons.jpg"))); // NOI18N
+        jbtnCrayola.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton61ActionPerformed(evt);
+                jbtnCrayolaActionPerformed(evt);
             }
         });
 
@@ -364,36 +369,37 @@ public class PosariMain extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jbtnCupnoodles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbtnMinMaid, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbtnGAlcohol, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jbtnLuncheonmeat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbtnMinWater, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton54, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton58, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jbtnGAlcohol, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jbtnMinMaid, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jbtnCupnoodles, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbtnPencil, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jButton54, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jbtnMinWater, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jbtnLuncheonmeat, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbtnNotebook, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jbtnSardines, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbtnFitnright, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton55, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton59, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jbtnGlue, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jbtnSpicynoodles, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtbnInstantmami, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton56, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton60, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jbtnYellowPad, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jbtnPepsi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jtbnJollycorn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton57, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton61, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jButton57, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(jbtnPepsi, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(jtbnJollycorn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jbtnCrayola, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(44, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()
                     .addGap(0, Short.MAX_VALUE, Short.MAX_VALUE)
@@ -434,11 +440,11 @@ public class PosariMain extends javax.swing.JFrame {
                         .addComponent(jButton57, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton59, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton29, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton58, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton60, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton61, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jbtnGlue, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbtnPencil, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbtnNotebook, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbtnYellowPad, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbtnCrayola, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()
@@ -837,9 +843,15 @@ public class PosariMain extends javax.swing.JFrame {
         ItemCost();
     }//GEN-LAST:event_jbtnGAlcoholActionPerformed
 
-    private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
+    private void jbtnPencilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnPencilActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton29ActionPerformed
+        double PriceOfItem = 10.75;
+        DecimalFormat df = new DecimalFormat("0.00");
+        //dont forget to add impot on DefaultTableModel btw, idk
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.addRow(new Object[]{"Pencil", "1",df.format(PriceOfItem)});
+        ItemCost();
+    }//GEN-LAST:event_jbtnPencilActionPerformed
 
     private void jbtnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnPrintActionPerformed
         // TODO add your handling code here:
@@ -974,21 +986,41 @@ public class PosariMain extends javax.swing.JFrame {
         ItemCost();
     }//GEN-LAST:event_jButton57ActionPerformed
 
-    private void jButton58ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton58ActionPerformed
+    private void jbtnNotebookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnNotebookActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton58ActionPerformed
+        double PriceOfItem = 20.35;
+        //dont forget to add impot on DefaultTableModel btw, idk
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.addRow(new Object[]{"Notebook", "1",PriceOfItem });
+        ItemCost();
+    }//GEN-LAST:event_jbtnNotebookActionPerformed
 
-    private void jButton59ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton59ActionPerformed
+    private void jbtnGlueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnGlueActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton59ActionPerformed
+        double PriceOfItem = 25.00;
+        //dont forget to add impot on DefaultTableModel btw, idk
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.addRow(new Object[]{"Glue", "1",PriceOfItem });
+        ItemCost();
+    }//GEN-LAST:event_jbtnGlueActionPerformed
 
-    private void jButton60ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton60ActionPerformed
+    private void jbtnYellowPadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnYellowPadActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton60ActionPerformed
+        double PriceOfItem = 99.20;
+        //dont forget to add impot on DefaultTableModel btw, idk
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.addRow(new Object[]{"Yellow pad", "1",PriceOfItem });
+        ItemCost();
+    }//GEN-LAST:event_jbtnYellowPadActionPerformed
 
-    private void jButton61ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton61ActionPerformed
+    private void jbtnCrayolaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnCrayolaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton61ActionPerformed
+         double PriceOfItem = 114.00;
+        //dont forget to add impot on DefaultTableModel btw, idk
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.addRow(new Object[]{"Crayola", "1",PriceOfItem });
+        ItemCost();
+    }//GEN-LAST:event_jbtnCrayolaActionPerformed
 
     private void jbtnPayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnPayActionPerformed
     if (jcboPayment.getSelectedItem().equals("Cash"))
@@ -1061,15 +1093,10 @@ public class PosariMain extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton54;
     private javax.swing.JButton jButton55;
     private javax.swing.JButton jButton56;
     private javax.swing.JButton jButton57;
-    private javax.swing.JButton jButton58;
-    private javax.swing.JButton jButton59;
-    private javax.swing.JButton jButton60;
-    private javax.swing.JButton jButton61;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -1108,21 +1135,26 @@ public class PosariMain extends javax.swing.JFrame {
     private javax.swing.JButton jbtn8;
     private javax.swing.JButton jbtn9;
     private javax.swing.JButton jbtnClear;
+    private javax.swing.JButton jbtnCrayola;
     private javax.swing.JButton jbtnCupnoodles;
     private javax.swing.JButton jbtnDot;
     private javax.swing.JButton jbtnExit;
     private javax.swing.JButton jbtnFitnright;
     private javax.swing.JButton jbtnGAlcohol;
+    private javax.swing.JButton jbtnGlue;
     private javax.swing.JButton jbtnLuncheonmeat;
     private javax.swing.JButton jbtnMinMaid;
     private javax.swing.JButton jbtnMinWater;
+    private javax.swing.JButton jbtnNotebook;
     private javax.swing.JButton jbtnPay;
+    private javax.swing.JButton jbtnPencil;
     private javax.swing.JButton jbtnPepsi;
     private javax.swing.JButton jbtnPrint;
     private javax.swing.JButton jbtnRemove;
     private javax.swing.JButton jbtnReset;
     private javax.swing.JButton jbtnSardines;
     private javax.swing.JButton jbtnSpicynoodles;
+    private javax.swing.JButton jbtnYellowPad;
     private javax.swing.JComboBox<String> jcboPayment;
     private javax.swing.JButton jtbnInstantmami;
     private javax.swing.JButton jtbnJollycorn;

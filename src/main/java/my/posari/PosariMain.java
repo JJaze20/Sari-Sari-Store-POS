@@ -6,6 +6,13 @@ package my.posari;
 
 import java.text.DecimalFormat;
 import javax.swing.table.DefaultTableModel;
+import java.awt.Desktop;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.io.IOException;
+import java.text.MessageFormat;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
 
 /**
  *
@@ -558,7 +565,7 @@ public class PosariMain extends javax.swing.JFrame {
         jPanel12.add(jtxtDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 200, 50));
 
         jcboPayment.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jcboPayment.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cash", "Visa Card", "Master Card" }));
+        jcboPayment.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cash", "G-Cash" }));
         jcboPayment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jcboPaymentActionPerformed(evt);
@@ -855,10 +862,26 @@ public class PosariMain extends javax.swing.JFrame {
 
     private void jbtnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnPrintActionPerformed
         // TODO add your handling code here:
+        MessageFormat header = new MessageFormat("Printing in progress");
+        MessageFormat footer = new MessageFormat("page {0, number, integer}");
+        
+        try
+        {
+            jTable1.print(JTable.PrintMode.NORMAL,header,footer);
+        }
+        
+        catch(java.awt.print.PrinterException e){
+            System.err.format("No Printer found", e.getMessage());
+        }
     }//GEN-LAST:event_jbtnPrintActionPerformed
 
     private void jbtnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnExitActionPerformed
-        // TODO add your handling code here:
+       
+    int confirmExit = JOptionPane.showConfirmDialog(this, "Are you sure you want to exit?", "Exit", JOptionPane.YES_NO_OPTION);
+    
+    if (confirmExit == JOptionPane.YES_OPTION) {
+        System.exit(0);  // Exit the application
+    }
     }//GEN-LAST:event_jbtnExitActionPerformed
 
     private void jbtnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnResetActionPerformed
@@ -1023,12 +1046,18 @@ public class PosariMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnCrayolaActionPerformed
 
     private void jbtnPayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnPayActionPerformed
-    if (jcboPayment.getSelectedItem().equals("Cash"))
-    {
-        Change();
-    }
-        else
-    {
+
+        if (jcboPayment.getSelectedItem().equals("Cash")) {
+        Change(); // Call the Change() method if "Cash" is selected
+    } else if (jcboPayment.getSelectedItem().equals("G-Cash")) {
+        // If "GCash" is selected, open the GCash website
+        try {
+            Desktop.getDesktop().browse(new URI("https://www.gcash.com"));
+        } catch (IOException | URISyntaxException e) {
+            e.printStackTrace(); // Handle any potential errors
+        }
+    } else {
+        // Clear text fields for other payment methods
         jtxtChange.setText("");
         jtxtDisplay.setText("");
     }

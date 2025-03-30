@@ -937,10 +937,9 @@
                   <Font name="Tahoma" size="20" style="1"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="3">
+                  <StringArray count="2">
                     <StringItem index="0" value="Cash"/>
-                    <StringItem index="1" value="Visa Card"/>
-                    <StringItem index="2" value="Master Card"/>
+                    <StringItem index="1" value="G-Cash"/>
                   </StringArray>
                 </Property>
               </Properties>

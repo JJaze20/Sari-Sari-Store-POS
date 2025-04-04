@@ -75,6 +75,12 @@ public class posariSignup extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(25, 50, 92));
         jLabel3.setText("Enter New Password");
 
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1ActionPerformed(evt);
+            }
+        });
+
         jButton1.setBackground(new java.awt.Color(25, 50, 92));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Login");
@@ -228,6 +234,15 @@ public class posariSignup extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Password must be at least 8 characters long!");
             return;
         }
+        
+        int confirm = JOptionPane.showConfirmDialog(this,"Confirm Password? ",
+        "Confirmation", 
+        JOptionPane.YES_NO_OPTION);
+
+        if (confirm != JOptionPane.YES_OPTION) {
+        JOptionPane.showMessageDialog(this, "Password confirmation canceled. Please re-enter your password.");
+        return;
+        }
 
         // Check if username already exists
         if (isUsernameTaken(username)) {
@@ -273,6 +288,10 @@ public class posariSignup extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
       private void saveUserToDatabase(String username, String hashedPassword) {
     try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
         String query = "INSERT INTO users (username, hashed_password) VALUES (?, ?)";

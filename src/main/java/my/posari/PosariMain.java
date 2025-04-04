@@ -861,7 +861,7 @@ public class PosariMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnPencilActionPerformed
 
     private void jbtnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnPrintActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:      
         MessageFormat header = new MessageFormat("Printing in progress");
         MessageFormat footer = new MessageFormat("page {0, number, integer}");
         
@@ -1046,9 +1046,34 @@ public class PosariMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnCrayolaActionPerformed
 
     private void jbtnPayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnPayActionPerformed
+     if (jcboPayment.getSelectedItem().equals("Cash")) {
+        try {
+        if (jtxtDisplay.getText().trim().isEmpty() || jtxtTotal.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please ensure both cash and total fields are filled.");
+            return;
+        }
 
-        if (jcboPayment.getSelectedItem().equals("Cash")) {
-        Change(); // Call the Change() method if "Cash" is selected
+        double cash = Double.parseDouble(jtxtDisplay.getText().trim());
+
+        // FIX: Remove currency symbol before parsing
+        String totalText = jtxtTotal.getText().replaceAll("[^\\d.]", "");
+        double total = Double.parseDouble(totalText);
+
+        double change = cash - total;
+
+        if (change < 0) {
+            JOptionPane.showMessageDialog(this, "Insufficient balance. Please provide enough cash.");
+            return;
+        }
+
+        jtxtChange.setText(String.format("₱ %.2f", change)); // Add ₱ for display
+        JOptionPane.showMessageDialog(this, "Payment successful! Change: " + String.format("₱ %.2f", change));
+
+        Change();
+
+       } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Invalid input. Please enter numeric values for cash and total.");
+       }
     } else if (jcboPayment.getSelectedItem().equals("G-Cash")) {
         // If "GCash" is selected, open the GCash website
         try {

@@ -13,6 +13,14 @@ import java.io.IOException;
 import java.text.MessageFormat;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.JDialog;
+import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -63,12 +71,12 @@ public class PosariMain extends javax.swing.JFrame {
         jtbnJollycorn = new javax.swing.JButton();
         jbtnMinWater = new javax.swing.JButton();
         jbtnSardines = new javax.swing.JButton();
-        jbtnSpicynoodles = new javax.swing.JButton();
+        jbtnBeefChoco = new javax.swing.JButton();
         jbtnPepsi = new javax.swing.JButton();
-        jButton54 = new javax.swing.JButton();
-        jButton55 = new javax.swing.JButton();
-        jButton56 = new javax.swing.JButton();
-        jButton57 = new javax.swing.JButton();
+        jButtonColgate = new javax.swing.JButton();
+        jbtnSafeGuard = new javax.swing.JButton();
+        jbtnKojic = new javax.swing.JButton();
+        jbtnMayaLotion = new javax.swing.JButton();
         jbtnNotebook = new javax.swing.JButton();
         jbtnGlue = new javax.swing.JButton();
         jbtnYellowPad = new javax.swing.JButton();
@@ -300,10 +308,10 @@ public class PosariMain extends javax.swing.JFrame {
             }
         });
 
-        jbtnSpicynoodles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BifChocoDip.jpg"))); // NOI18N
-        jbtnSpicynoodles.addActionListener(new java.awt.event.ActionListener() {
+        jbtnBeefChoco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BifChocoDip.jpg"))); // NOI18N
+        jbtnBeefChoco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnSpicynoodlesActionPerformed(evt);
+                jbtnBeefChocoActionPerformed(evt);
             }
         });
 
@@ -314,31 +322,31 @@ public class PosariMain extends javax.swing.JFrame {
             }
         });
 
-        jButton54.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/colgate.jpg"))); // NOI18N
-        jButton54.addActionListener(new java.awt.event.ActionListener() {
+        jButtonColgate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/colgate.jpg"))); // NOI18N
+        jButtonColgate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton54ActionPerformed(evt);
+                jButtonColgateActionPerformed(evt);
             }
         });
 
-        jButton55.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/safeguard.jpg"))); // NOI18N
-        jButton55.addActionListener(new java.awt.event.ActionListener() {
+        jbtnSafeGuard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/safeguard.jpg"))); // NOI18N
+        jbtnSafeGuard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton55ActionPerformed(evt);
+                jbtnSafeGuardActionPerformed(evt);
             }
         });
 
-        jButton56.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/kojic.jpg"))); // NOI18N
-        jButton56.addActionListener(new java.awt.event.ActionListener() {
+        jbtnKojic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/kojic.jpg"))); // NOI18N
+        jbtnKojic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton56ActionPerformed(evt);
+                jbtnKojicActionPerformed(evt);
             }
         });
 
-        jButton57.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/maya.jpg"))); // NOI18N
-        jButton57.addActionListener(new java.awt.event.ActionListener() {
+        jbtnMayaLotion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/maya.jpg"))); // NOI18N
+        jbtnMayaLotion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton57ActionPerformed(evt);
+                jbtnMayaLotionActionPerformed(evt);
             }
         });
 
@@ -383,7 +391,7 @@ public class PosariMain extends javax.swing.JFrame {
                     .addComponent(jbtnPencil, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jButton54, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jButtonColgate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jbtnMinWater, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jbtnLuncheonmeat, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbtnNotebook, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
@@ -391,18 +399,18 @@ public class PosariMain extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jbtnSardines, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbtnFitnright, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton55, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbtnSafeGuard, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbtnGlue, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jbtnSpicynoodles, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbtnBeefChoco, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtbnInstantmami, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton56, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbtnKojic, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbtnYellowPad, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jButton57, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(jbtnMayaLotion, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addComponent(jbtnPepsi, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addComponent(jtbnJollycorn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jbtnCrayola, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -433,18 +441,18 @@ public class PosariMain extends javax.swing.JFrame {
                         .addComponent(jbtnMinWater, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                            .addComponent(jbtnSpicynoodles, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jbtnBeefChoco, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
-                            .addComponent(jButton56, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jbtnKojic, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel3Layout.createSequentialGroup()
                             .addComponent(jbtnSardines, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
-                            .addComponent(jButton55, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jButton54, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jbtnSafeGuard, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jButtonColgate, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jbtnPepsi, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton57, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jbtnMayaLotion, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jbtnGlue, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -822,59 +830,340 @@ public class PosariMain extends javax.swing.JFrame {
 
     private void jbtnCupnoodlesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnCupnoodlesActionPerformed
          // TODO add your handling code here:
-        double PriceOfItem = 75.30;
-        DecimalFormat df = new DecimalFormat("0.00");
-        //dont forget to add impot on DefaultTableModel btw, idk
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.addRow(new Object[]{"Cup Noodles", "1",df.format(PriceOfItem)});
-        ItemCost();
+        // Name and price of the item
+    String itemName = "Cup Noodles";
+    double priceOfItem = 75.00;
+
+    // Prompt the user to enter the quantity
+    String input = JOptionPane.showInputDialog(this, "Enter quantity for " + itemName + ":", "Quantity", JOptionPane.PLAIN_MESSAGE);
+    if (input != null && !input.trim().isEmpty()) {
+        try {
+            int quantity = Integer.parseInt(input.trim());
+            if (quantity <= 0) {
+                JOptionPane.showMessageDialog(this, "Quantity must be greater than 0.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Calculate total price for the selected quantity
+            double totalPrice = priceOfItem * quantity;
+
+            // Format the price
+            DecimalFormat df = new DecimalFormat("0.00");
+
+            // Get the table model
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+            // Check if the item already exists in the table
+            boolean itemExists = false;
+            for (int i = 0; i < model.getRowCount(); i++) {
+                String existingItemName = model.getValueAt(i, 0).toString();
+                if (existingItemName.equals(itemName)) {
+                    // Update the quantity and price for the existing item
+                    int existingQuantity = Integer.parseInt(model.getValueAt(i, 1).toString());
+                    double existingPrice = Double.parseDouble(model.getValueAt(i, 2).toString());
+                    int newQuantity = existingQuantity + quantity;
+                    double newPrice = existingPrice + totalPrice;
+
+                    model.setValueAt(newQuantity, i, 1); // Update quantity
+                    model.setValueAt(df.format(newPrice), i, 2); // Update price
+                    itemExists = true;
+                    break;
+                }
+            }
+
+            // If the item does not exist, add a new row
+            if (!itemExists) {
+                model.addRow(new Object[]{itemName, quantity, df.format(totalPrice)});
+            }
+
+            // Update the total cost
+            ItemCost();
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid quantity. Please enter a valid number.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } else {
+        // User canceled or entered nothing
+        JOptionPane.showMessageDialog(this, "No quantity entered. Action canceled.", "Info", JOptionPane.INFORMATION_MESSAGE);
+    }
 
     }//GEN-LAST:event_jbtnCupnoodlesActionPerformed
 
     private void jbtnMinMaidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnMinMaidActionPerformed
         // TODO add your handling code here:
-        double PriceOfItem = 15.05;
-        //dont forget to add impot on DefaultTableModel btw, idk
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.addRow(new Object[]{"Minute Maid", "1",PriceOfItem });
-        ItemCost();
+// Name and price of the item
+    String itemName = "Minute Maid";
+    double priceOfItem = 15.00;
+
+    // Prompt the user to enter the quantity
+    String input = JOptionPane.showInputDialog(this, "Enter quantity for " + itemName + ":", "Quantity", JOptionPane.PLAIN_MESSAGE);
+    if (input != null && !input.trim().isEmpty()) {
+        try {
+            int quantity = Integer.parseInt(input.trim());
+            if (quantity <= 0) {
+                JOptionPane.showMessageDialog(this, "Quantity must be greater than 0.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Calculate total price for the selected quantity
+            double totalPrice = priceOfItem * quantity;
+
+            // Format the price
+            DecimalFormat df = new DecimalFormat("0.00");
+
+            // Get the table model
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+            // Check if the item already exists in the table
+            boolean itemExists = false;
+            for (int i = 0; i < model.getRowCount(); i++) {
+                String existingItemName = model.getValueAt(i, 0).toString();
+                if (existingItemName.equals(itemName)) {
+                    // Update the quantity and price for the existing item
+                    int existingQuantity = Integer.parseInt(model.getValueAt(i, 1).toString());
+                    double existingPrice = Double.parseDouble(model.getValueAt(i, 2).toString());
+                    int newQuantity = existingQuantity + quantity;
+                    double newPrice = existingPrice + totalPrice;
+
+                    model.setValueAt(newQuantity, i, 1); // Update quantity
+                    model.setValueAt(df.format(newPrice), i, 2); // Update price
+                    itemExists = true;
+                    break;
+                }
+            }
+
+            // If the item does not exist, add a new row
+            if (!itemExists) {
+                model.addRow(new Object[]{itemName, quantity, df.format(totalPrice)});
+            }
+
+            // Update the total cost
+            ItemCost();
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid quantity. Please enter a valid number.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } else {
+        // User canceled or entered nothing
+        JOptionPane.showMessageDialog(this, "No quantity entered. Action canceled.", "Info", JOptionPane.INFORMATION_MESSAGE);
+    }
     }//GEN-LAST:event_jbtnMinMaidActionPerformed
 
     private void jbtnGAlcoholActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnGAlcoholActionPerformed
         // TODO add your handling code here:
-        double PriceOfItem = 35.20;
-        DecimalFormat df = new DecimalFormat("0.00");
-        //dont forget to add impot on DefaultTableModel btw, idk
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.addRow(new Object[]{"GreenCross Alchohol", "1",df.format(PriceOfItem)});
-        ItemCost();
+        // Name and price of the item
+    String itemName = "Green Cross";
+    double priceOfItem = 35.00;
+
+    // Prompt the user to enter the quantity
+    String input = JOptionPane.showInputDialog(this, "Enter quantity for " + itemName + ":", "Quantity", JOptionPane.PLAIN_MESSAGE);
+    if (input != null && !input.trim().isEmpty()) {
+        try {
+            int quantity = Integer.parseInt(input.trim());
+            if (quantity <= 0) {
+                JOptionPane.showMessageDialog(this, "Quantity must be greater than 0.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Calculate total price for the selected quantity
+            double totalPrice = priceOfItem * quantity;
+
+            // Format the price
+            DecimalFormat df = new DecimalFormat("0.00");
+
+            // Get the table model
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+            // Check if the item already exists in the table
+            boolean itemExists = false;
+            for (int i = 0; i < model.getRowCount(); i++) {
+                String existingItemName = model.getValueAt(i, 0).toString();
+                if (existingItemName.equals(itemName)) {
+                    // Update the quantity and price for the existing item
+                    int existingQuantity = Integer.parseInt(model.getValueAt(i, 1).toString());
+                    double existingPrice = Double.parseDouble(model.getValueAt(i, 2).toString());
+                    int newQuantity = existingQuantity + quantity;
+                    double newPrice = existingPrice + totalPrice;
+
+                    model.setValueAt(newQuantity, i, 1); // Update quantity
+                    model.setValueAt(df.format(newPrice), i, 2); // Update price
+                    itemExists = true;
+                    break;
+                }
+            }
+
+            // If the item does not exist, add a new row
+            if (!itemExists) {
+                model.addRow(new Object[]{itemName, quantity, df.format(totalPrice)});
+            }
+
+            // Update the total cost
+            ItemCost();
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid quantity. Please enter a valid number.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } else {
+        // User canceled or entered nothing
+        JOptionPane.showMessageDialog(this, "No quantity entered. Action canceled.", "Info", JOptionPane.INFORMATION_MESSAGE);
+    }
     }//GEN-LAST:event_jbtnGAlcoholActionPerformed
 
     private void jbtnPencilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnPencilActionPerformed
         // TODO add your handling code here:
-        double PriceOfItem = 10.75;
-        DecimalFormat df = new DecimalFormat("0.00");
-        //dont forget to add impot on DefaultTableModel btw, idk
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.addRow(new Object[]{"Pencil", "1",df.format(PriceOfItem)});
-        ItemCost();
+        // Name and price of the item
+    String itemName = "Pencil";
+    double priceOfItem = 10.00;
+
+    // Prompt the user to enter the quantity
+    String input = JOptionPane.showInputDialog(this, "Enter quantity for " + itemName + ":", "Quantity", JOptionPane.PLAIN_MESSAGE);
+    if (input != null && !input.trim().isEmpty()) {
+        try {
+            int quantity = Integer.parseInt(input.trim());
+            if (quantity <= 0) {
+                JOptionPane.showMessageDialog(this, "Quantity must be greater than 0.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Calculate total price for the selected quantity
+            double totalPrice = priceOfItem * quantity;
+
+            // Format the price
+            DecimalFormat df = new DecimalFormat("0.00");
+
+            // Get the table model
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+            // Check if the item already exists in the table
+            boolean itemExists = false;
+            for (int i = 0; i < model.getRowCount(); i++) {
+                String existingItemName = model.getValueAt(i, 0).toString();
+                if (existingItemName.equals(itemName)) {
+                    // Update the quantity and price for the existing item
+                    int existingQuantity = Integer.parseInt(model.getValueAt(i, 1).toString());
+                    double existingPrice = Double.parseDouble(model.getValueAt(i, 2).toString());
+                    int newQuantity = existingQuantity + quantity;
+                    double newPrice = existingPrice + totalPrice;
+
+                    model.setValueAt(newQuantity, i, 1); // Update quantity
+                    model.setValueAt(df.format(newPrice), i, 2); // Update price
+                    itemExists = true;
+                    break;
+                }
+            }
+
+            // If the item does not exist, add a new row
+            if (!itemExists) {
+                model.addRow(new Object[]{itemName, quantity, df.format(totalPrice)});
+            }
+
+            // Update the total cost
+            ItemCost();
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid quantity. Please enter a valid number.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } else {
+        // User canceled or entered nothing
+        JOptionPane.showMessageDialog(this, "No quantity entered. Action canceled.", "Info", JOptionPane.INFORMATION_MESSAGE);
+    }
     }//GEN-LAST:event_jbtnPencilActionPerformed
 
     private void jbtnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnPrintActionPerformed
         // TODO add your handling code here:      
-        MessageFormat header = new MessageFormat("Printing in progress");
-        MessageFormat footer = new MessageFormat("page {0, number, integer}");
-        
-        try
-        {
-            jTable1.print(JTable.PrintMode.NORMAL,header,footer);
-        }
-        
-        catch(java.awt.print.PrinterException e){
-            System.err.format("No Printer found", e.getMessage());
-        }
-    }//GEN-LAST:event_jbtnPrintActionPerformed
+          if (jtxtDisplay.getText().trim().isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Please enter the cash amount.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
 
+    try {
+        // Parse the cash and total amounts
+        double cash = Double.parseDouble(jtxtDisplay.getText().trim());
+        String totalText = jtxtTotal.getText().replaceAll("[^\\d.]", ""); // Remove currency symbols
+        double total = Double.parseDouble(totalText);
+
+        // Check if cash is sufficient
+        if (cash < total) {
+            JOptionPane.showMessageDialog(this, "Your money is not enough to buy the item.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Generate and display the receipt
+        JDialog receiptDialog = new JDialog(this, "Receipt Preview", true);
+        receiptDialog.setSize(400, 600);
+        receiptDialog.setLocationRelativeTo(this);
+
+        // Create a JTextArea to display the receipt content
+        JTextArea receiptArea = new JTextArea();
+        receiptArea.setEditable(false);
+        receiptArea.setText(generateReceiptContent()); // Generate receipt content dynamically
+        JScrollPane scrollPane = new JScrollPane(receiptArea);
+
+        // Add the JTextArea to the dialog
+        receiptDialog.add(scrollPane);
+
+        // Add a Print button to the dialog
+        JButton printButton = new JButton("Print");
+        printButton.addActionListener(e -> {
+            MessageFormat header = new MessageFormat("Receipt");
+            MessageFormat footer = new MessageFormat("Page {0, number, integer}");
+            try {
+                receiptArea.print(header, footer);
+            } catch (java.awt.print.PrinterException ex) {
+                JOptionPane.showMessageDialog(this, "Printing failed: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            }
+            receiptDialog.dispose(); // Close the dialog after printing
+        });
+
+        // Add a Cancel button to the dialog
+        JButton cancelButton = new JButton("Cancel");
+        cancelButton.addActionListener(e -> receiptDialog.dispose());
+
+        // Add buttons to the dialog
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.add(printButton);
+        buttonPanel.add(cancelButton);
+        receiptDialog.add(buttonPanel, BorderLayout.SOUTH);
+
+        // Show the dialog
+        receiptDialog.setVisible(true);
+
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Invalid input. Please enter numeric values for cash.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    }//GEN-LAST:event_jbtnPrintActionPerformed
+public String generateReceiptContent() {
+    // Logic to generate receipt conten
+     StringBuilder receipt = new StringBuilder();
+    receipt.append("        ********** GOON SQUAD SARI-SARI STORE**********\n");
+    receipt.append("Item\tQuantity\tPrice\n");
+    receipt.append("----------------------------\n");
+
+    // Iterate through the rows of the JTable
+    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+    for (int i = 0; i < model.getRowCount(); i++) {
+        String itemName = model.getValueAt(i, 0).toString(); // Item name
+        String quantity = model.getValueAt(i, 1).toString(); // Quantity
+        String price = model.getValueAt(i, 2).toString();    // Price
+
+        // Append item details to the receipt
+        receipt.append(itemName).append("\t")
+               .append(quantity).append("\t\t")
+               .append(price).append("\n");
+    }
+
+    receipt.append("----------------------------\n");
+
+    // Add total cost
+    String totalCost = jtxtTotal.getText(); // Assuming jtxtTotal contains the total cost
+    receipt.append("Total: ").append(totalCost).append("\n");
+
+    // Add footer
+    receipt.append("****************************\n");
+    receipt.append("Thank you for shopping with us!\n");
+
+    return receipt.toString();
+}
     private void jbtnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnExitActionPerformed
        
     int confirmExit = JOptionPane.showConfirmDialog(this, "Are you sure you want to exit?", "Exit", JOptionPane.YES_NO_OPTION);
@@ -896,153 +1185,962 @@ public class PosariMain extends javax.swing.JFrame {
 
     private void jbtnLuncheonmeatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnLuncheonmeatActionPerformed
          // TODO add your handling code here:
-        double PriceOfItem = 20.50;
-         DecimalFormat df = new DecimalFormat("0.00");
-        //dont forget to add impot on DefaultTableModel btw, idk
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.addRow(new Object[]{"Holiday Luncheon Meat  ", "1",df.format(PriceOfItem) });
-        ItemCost();
+        // Name and price of the item
+    String itemName = "Beef Loop";
+    double priceOfItem = 20.00;
+
+    // Prompt the user to enter the quantity
+    String input = JOptionPane.showInputDialog(this, "Enter quantity for " + itemName + ":", "Quantity", JOptionPane.PLAIN_MESSAGE);
+    if (input != null && !input.trim().isEmpty()) {
+        try {
+            int quantity = Integer.parseInt(input.trim());
+            if (quantity <= 0) {
+                JOptionPane.showMessageDialog(this, "Quantity must be greater than 0.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Calculate total price for the selected quantity
+            double totalPrice = priceOfItem * quantity;
+
+            // Format the price
+            DecimalFormat df = new DecimalFormat("0.00");
+
+            // Get the table model
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+            // Check if the item already exists in the table
+            boolean itemExists = false;
+            for (int i = 0; i < model.getRowCount(); i++) {
+                String existingItemName = model.getValueAt(i, 0).toString();
+                if (existingItemName.equals(itemName)) {
+                    // Update the quantity and price for the existing item
+                    int existingQuantity = Integer.parseInt(model.getValueAt(i, 1).toString());
+                    double existingPrice = Double.parseDouble(model.getValueAt(i, 2).toString());
+                    int newQuantity = existingQuantity + quantity;
+                    double newPrice = existingPrice + totalPrice;
+
+                    model.setValueAt(newQuantity, i, 1); // Update quantity
+                    model.setValueAt(df.format(newPrice), i, 2); // Update price
+                    itemExists = true;
+                    break;
+                }
+            }
+
+            // If the item does not exist, add a new row
+            if (!itemExists) {
+                model.addRow(new Object[]{itemName, quantity, df.format(totalPrice)});
+            }
+
+            // Update the total cost
+            ItemCost();
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid quantity. Please enter a valid number.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } else {
+        // User canceled or entered nothing
+        JOptionPane.showMessageDialog(this, "No quantity entered. Action canceled.", "Info", JOptionPane.INFORMATION_MESSAGE);
+    }
     }//GEN-LAST:event_jbtnLuncheonmeatActionPerformed
 
     private void jbtnFitnrightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnFitnrightActionPerformed
          // TODO add your handling code here:
-        double PriceOfItem = 58.80;
-        DecimalFormat df = new DecimalFormat("0.00");
-        //dont forget to add impot on DefaultTableModel btw, idk
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.addRow(new Object[]{"Fit n Right", "1",df.format(PriceOfItem) });
-        ItemCost();
+        // Name and price of the item
+    String itemName = "Fit n Right";
+    double priceOfItem = 58.00;
+
+    // Prompt the user to enter the quantity
+    String input = JOptionPane.showInputDialog(this, "Enter quantity for " + itemName + ":", "Quantity", JOptionPane.PLAIN_MESSAGE);
+    if (input != null && !input.trim().isEmpty()) {
+        try {
+            int quantity = Integer.parseInt(input.trim());
+            if (quantity <= 0) {
+                JOptionPane.showMessageDialog(this, "Quantity must be greater than 0.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Calculate total price for the selected quantity
+            double totalPrice = priceOfItem * quantity;
+
+            // Format the price
+            DecimalFormat df = new DecimalFormat("0.00");
+
+            // Get the table model
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+            // Check if the item already exists in the table
+            boolean itemExists = false;
+            for (int i = 0; i < model.getRowCount(); i++) {
+                String existingItemName = model.getValueAt(i, 0).toString();
+                if (existingItemName.equals(itemName)) {
+                    // Update the quantity and price for the existing item
+                    int existingQuantity = Integer.parseInt(model.getValueAt(i, 1).toString());
+                    double existingPrice = Double.parseDouble(model.getValueAt(i, 2).toString());
+                    int newQuantity = existingQuantity + quantity;
+                    double newPrice = existingPrice + totalPrice;
+
+                    model.setValueAt(newQuantity, i, 1); // Update quantity
+                    model.setValueAt(df.format(newPrice), i, 2); // Update price
+                    itemExists = true;
+                    break;
+                }
+            }
+
+            // If the item does not exist, add a new row
+            if (!itemExists) {
+                model.addRow(new Object[]{itemName, quantity, df.format(totalPrice)});
+            }
+
+            // Update the total cost
+            ItemCost();
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid quantity. Please enter a valid number.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } else {
+        // User canceled or entered nothing
+        JOptionPane.showMessageDialog(this, "No quantity entered. Action canceled.", "Info", JOptionPane.INFORMATION_MESSAGE);
+    }
     }//GEN-LAST:event_jbtnFitnrightActionPerformed
 
     private void jtbnInstantmamiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtbnInstantmamiActionPerformed
          // TODO add your handling code here:
-        double PriceOfItem = 10.80;
-        DecimalFormat df = new DecimalFormat("0.00");
-        //dont forget to add impot on DefaultTableModel btw, idk
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.addRow(new Object[]{"Instant Mami", "1",df.format(PriceOfItem) });
-        ItemCost();
+        // Name and price of the item
+    String itemName = "Instant Mami";
+    double priceOfItem = 10.00;
+
+    // Prompt the user to enter the quantity
+    String input = JOptionPane.showInputDialog(this, "Enter quantity for " + itemName + ":", "Quantity", JOptionPane.PLAIN_MESSAGE);
+    if (input != null && !input.trim().isEmpty()) {
+        try {
+            int quantity = Integer.parseInt(input.trim());
+            if (quantity <= 0) {
+                JOptionPane.showMessageDialog(this, "Quantity must be greater than 0.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Calculate total price for the selected quantity
+            double totalPrice = priceOfItem * quantity;
+
+            // Format the price
+            DecimalFormat df = new DecimalFormat("0.00");
+
+            // Get the table model
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+            // Check if the item already exists in the table
+            boolean itemExists = false;
+            for (int i = 0; i < model.getRowCount(); i++) {
+                String existingItemName = model.getValueAt(i, 0).toString();
+                if (existingItemName.equals(itemName)) {
+                    // Update the quantity and price for the existing item
+                    int existingQuantity = Integer.parseInt(model.getValueAt(i, 1).toString());
+                    double existingPrice = Double.parseDouble(model.getValueAt(i, 2).toString());
+                    int newQuantity = existingQuantity + quantity;
+                    double newPrice = existingPrice + totalPrice;
+
+                    model.setValueAt(newQuantity, i, 1); // Update quantity
+                    model.setValueAt(df.format(newPrice), i, 2); // Update price
+                    itemExists = true;
+                    break;
+                }
+            }
+
+            // If the item does not exist, add a new row
+            if (!itemExists) {
+                model.addRow(new Object[]{itemName, quantity, df.format(totalPrice)});
+            }
+
+            // Update the total cost
+            ItemCost();
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid quantity. Please enter a valid number.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } else {
+        // User canceled or entered nothing
+        JOptionPane.showMessageDialog(this, "No quantity entered. Action canceled.", "Info", JOptionPane.INFORMATION_MESSAGE);
+    }
     }//GEN-LAST:event_jtbnInstantmamiActionPerformed
 
     private void jtbnJollycornActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtbnJollycornActionPerformed
          // TODO add your handling code here:
-        double PriceOfItem = 43.15;
-        //dont forget to add impot on DefaultTableModel btw, idk
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.addRow(new Object[]{"Jolly Can Corn", "1",PriceOfItem });
-        ItemCost();
+        // Name and price of the item
+    String itemName = "Jolly Corn";
+    double priceOfItem = 43.00;
+
+    // Prompt the user to enter the quantity
+    String input = JOptionPane.showInputDialog(this, "Enter quantity for " + itemName + ":", "Quantity", JOptionPane.PLAIN_MESSAGE);
+    if (input != null && !input.trim().isEmpty()) {
+        try {
+            int quantity = Integer.parseInt(input.trim());
+            if (quantity <= 0) {
+                JOptionPane.showMessageDialog(this, "Quantity must be greater than 0.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Calculate total price for the selected quantity
+            double totalPrice = priceOfItem * quantity;
+
+            // Format the price
+            DecimalFormat df = new DecimalFormat("0.00");
+
+            // Get the table model
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+            // Check if the item already exists in the table
+            boolean itemExists = false;
+            for (int i = 0; i < model.getRowCount(); i++) {
+                String existingItemName = model.getValueAt(i, 0).toString();
+                if (existingItemName.equals(itemName)) {
+                    // Update the quantity and price for the existing item
+                    int existingQuantity = Integer.parseInt(model.getValueAt(i, 1).toString());
+                    double existingPrice = Double.parseDouble(model.getValueAt(i, 2).toString());
+                    int newQuantity = existingQuantity + quantity;
+                    double newPrice = existingPrice + totalPrice;
+
+                    model.setValueAt(newQuantity, i, 1); // Update quantity
+                    model.setValueAt(df.format(newPrice), i, 2); // Update price
+                    itemExists = true;
+                    break;
+                }
+            }
+
+            // If the item does not exist, add a new row
+            if (!itemExists) {
+                model.addRow(new Object[]{itemName, quantity, df.format(totalPrice)});
+            }
+
+            // Update the total cost
+            ItemCost();
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid quantity. Please enter a valid number.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } else {
+        // User canceled or entered nothing
+        JOptionPane.showMessageDialog(this, "No quantity entered. Action canceled.", "Info", JOptionPane.INFORMATION_MESSAGE);
+    }
     }//GEN-LAST:event_jtbnJollycornActionPerformed
 
     private void jbtnMinWaterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnMinWaterActionPerformed
         // TODO add your handling code here:
-        double PriceOfItem = 6.70;
-        DecimalFormat df = new DecimalFormat("0.00");
-        //dont forget to add impot on DefaultTableModel btw, idk
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.addRow(new Object[]{"Mineral Water", "1",df.format(PriceOfItem) });
-        ItemCost();
+       // Name and price of the item
+    String itemName = "Mineral Water";
+    double priceOfItem = 6.00;
+
+    // Prompt the user to enter the quantity
+    String input = JOptionPane.showInputDialog(this, "Enter quantity for " + itemName + ":", "Quantity", JOptionPane.PLAIN_MESSAGE);
+    if (input != null && !input.trim().isEmpty()) {
+        try {
+            int quantity = Integer.parseInt(input.trim());
+            if (quantity <= 0) {
+                JOptionPane.showMessageDialog(this, "Quantity must be greater than 0.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Calculate total price for the selected quantity
+            double totalPrice = priceOfItem * quantity;
+
+            // Format the price
+            DecimalFormat df = new DecimalFormat("0.00");
+
+            // Get the table model
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+            // Check if the item already exists in the table
+            boolean itemExists = false;
+            for (int i = 0; i < model.getRowCount(); i++) {
+                String existingItemName = model.getValueAt(i, 0).toString();
+                if (existingItemName.equals(itemName)) {
+                    // Update the quantity and price for the existing item
+                    int existingQuantity = Integer.parseInt(model.getValueAt(i, 1).toString());
+                    double existingPrice = Double.parseDouble(model.getValueAt(i, 2).toString());
+                    int newQuantity = existingQuantity + quantity;
+                    double newPrice = existingPrice + totalPrice;
+
+                    model.setValueAt(newQuantity, i, 1); // Update quantity
+                    model.setValueAt(df.format(newPrice), i, 2); // Update price
+                    itemExists = true;
+                    break;
+                }
+            }
+
+            // If the item does not exist, add a new row
+            if (!itemExists) {
+                model.addRow(new Object[]{itemName, quantity, df.format(totalPrice)});
+            }
+
+            // Update the total cost
+            ItemCost();
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid quantity. Please enter a valid number.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } else {
+        // User canceled or entered nothing
+        JOptionPane.showMessageDialog(this, "No quantity entered. Action canceled.", "Info", JOptionPane.INFORMATION_MESSAGE);
+    }
     }//GEN-LAST:event_jbtnMinWaterActionPerformed
 
     private void jbtnSardinesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSardinesActionPerformed
         // TODO add your handling code here:
-        double PriceOfItem = 18.99;
-        //dont forget to add impot on DefaultTableModel btw, idk
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.addRow(new Object[]{"Mega Sardines", "1",PriceOfItem });
-        ItemCost();
+       // Name and price of the item
+    String itemName = "Mega Sardines";
+    double priceOfItem = 18.00;
+
+    // Prompt the user to enter the quantity
+    String input = JOptionPane.showInputDialog(this, "Enter quantity for " + itemName + ":", "Quantity", JOptionPane.PLAIN_MESSAGE);
+    if (input != null && !input.trim().isEmpty()) {
+        try {
+            int quantity = Integer.parseInt(input.trim());
+            if (quantity <= 0) {
+                JOptionPane.showMessageDialog(this, "Quantity must be greater than 0.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Calculate total price for the selected quantity
+            double totalPrice = priceOfItem * quantity;
+
+            // Format the price
+            DecimalFormat df = new DecimalFormat("0.00");
+
+            // Get the table model
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+            // Check if the item already exists in the table
+            boolean itemExists = false;
+            for (int i = 0; i < model.getRowCount(); i++) {
+                String existingItemName = model.getValueAt(i, 0).toString();
+                if (existingItemName.equals(itemName)) {
+                    // Update the quantity and price for the existing item
+                    int existingQuantity = Integer.parseInt(model.getValueAt(i, 1).toString());
+                    double existingPrice = Double.parseDouble(model.getValueAt(i, 2).toString());
+                    int newQuantity = existingQuantity + quantity;
+                    double newPrice = existingPrice + totalPrice;
+
+                    model.setValueAt(newQuantity, i, 1); // Update quantity
+                    model.setValueAt(df.format(newPrice), i, 2); // Update price
+                    itemExists = true;
+                    break;
+                }
+            }
+
+            // If the item does not exist, add a new row
+            if (!itemExists) {
+                model.addRow(new Object[]{itemName, quantity, df.format(totalPrice)});
+            }
+
+            // Update the total cost
+            ItemCost();
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid quantity. Please enter a valid number.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } else {
+        // User canceled or entered nothing
+        JOptionPane.showMessageDialog(this, "No quantity entered. Action canceled.", "Info", JOptionPane.INFORMATION_MESSAGE);
+    }
     }//GEN-LAST:event_jbtnSardinesActionPerformed
 
-    private void jbtnSpicynoodlesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSpicynoodlesActionPerformed
+    private void jbtnBeefChocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnBeefChocoActionPerformed
          // TODO add your handling code here:
-        double PriceOfItem = 75.30;
-        DecimalFormat df = new DecimalFormat("0.00");
-        //dont forget to add impot on DefaultTableModel btw, idk
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.addRow(new Object[]{"Spicy Cup Noodles", "1",df.format(PriceOfItem) });
-        ItemCost();
-    }//GEN-LAST:event_jbtnSpicynoodlesActionPerformed
+        // Name and price of the item
+    String itemName = "Beef Choco";
+    double priceOfItem = 75.00;
+
+    // Prompt the user to enter the quantity
+    String input = JOptionPane.showInputDialog(this, "Enter quantity for " + itemName + ":", "Quantity", JOptionPane.PLAIN_MESSAGE);
+    if (input != null && !input.trim().isEmpty()) {
+        try {
+            int quantity = Integer.parseInt(input.trim());
+            if (quantity <= 0) {
+                JOptionPane.showMessageDialog(this, "Quantity must be greater than 0.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Calculate total price for the selected quantity
+            double totalPrice = priceOfItem * quantity;
+
+            // Format the price
+            DecimalFormat df = new DecimalFormat("0.00");
+
+            // Get the table model
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+            // Check if the item already exists in the table
+            boolean itemExists = false;
+            for (int i = 0; i < model.getRowCount(); i++) {
+                String existingItemName = model.getValueAt(i, 0).toString();
+                if (existingItemName.equals(itemName)) {
+                    // Update the quantity and price for the existing item
+                    int existingQuantity = Integer.parseInt(model.getValueAt(i, 1).toString());
+                    double existingPrice = Double.parseDouble(model.getValueAt(i, 2).toString());
+                    int newQuantity = existingQuantity + quantity;
+                    double newPrice = existingPrice + totalPrice;
+
+                    model.setValueAt(newQuantity, i, 1); // Update quantity
+                    model.setValueAt(df.format(newPrice), i, 2); // Update price
+                    itemExists = true;
+                    break;
+                }
+            }
+
+            // If the item does not exist, add a new row
+            if (!itemExists) {
+                model.addRow(new Object[]{itemName, quantity, df.format(totalPrice)});
+            }
+
+            // Update the total cost
+            ItemCost();
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid quantity. Please enter a valid number.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } else {
+        // User canceled or entered nothing
+        JOptionPane.showMessageDialog(this, "No quantity entered. Action canceled.", "Info", JOptionPane.INFORMATION_MESSAGE);
+    }
+    }//GEN-LAST:event_jbtnBeefChocoActionPerformed
 
     private void jbtnPepsiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnPepsiActionPerformed
          // TODO add your handling code here:
-        double PriceOfItem = 32.50;
-        DecimalFormat df = new DecimalFormat("0.00");
-        //dont forget to add impot on DefaultTableModel btw, idk
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.addRow(new Object[]{"Pepsi Cola", "1",df.format(PriceOfItem) });
-        ItemCost();
+        // Name and price of the item
+    String itemName = "Pepsi";
+    double priceOfItem = 32.00;
+
+    // Prompt the user to enter the quantity
+    String input = JOptionPane.showInputDialog(this, "Enter quantity for " + itemName + ":", "Quantity", JOptionPane.PLAIN_MESSAGE);
+    if (input != null && !input.trim().isEmpty()) {
+        try {
+            int quantity = Integer.parseInt(input.trim());
+            if (quantity <= 0) {
+                JOptionPane.showMessageDialog(this, "Quantity must be greater than 0.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Calculate total price for the selected quantity
+            double totalPrice = priceOfItem * quantity;
+
+            // Format the price
+            DecimalFormat df = new DecimalFormat("0.00");
+
+            // Get the table model
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+            // Check if the item already exists in the table
+            boolean itemExists = false;
+            for (int i = 0; i < model.getRowCount(); i++) {
+                String existingItemName = model.getValueAt(i, 0).toString();
+                if (existingItemName.equals(itemName)) {
+                    // Update the quantity and price for the existing item
+                    int existingQuantity = Integer.parseInt(model.getValueAt(i, 1).toString());
+                    double existingPrice = Double.parseDouble(model.getValueAt(i, 2).toString());
+                    int newQuantity = existingQuantity + quantity;
+                    double newPrice = existingPrice + totalPrice;
+
+                    model.setValueAt(newQuantity, i, 1); // Update quantity
+                    model.setValueAt(df.format(newPrice), i, 2); // Update price
+                    itemExists = true;
+                    break;
+                }
+            }
+
+            // If the item does not exist, add a new row
+            if (!itemExists) {
+                model.addRow(new Object[]{itemName, quantity, df.format(totalPrice)});
+            }
+
+            // Update the total cost
+            ItemCost();
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid quantity. Please enter a valid number.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } else {
+        // User canceled or entered nothing
+        JOptionPane.showMessageDialog(this, "No quantity entered. Action canceled.", "Info", JOptionPane.INFORMATION_MESSAGE);
+    }
     }//GEN-LAST:event_jbtnPepsiActionPerformed
 
-    private void jButton54ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton54ActionPerformed
+    private void jButtonColgateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonColgateActionPerformed
          // TODO add your handling code here:
-        double PriceOfItem = 29.50;
-        DecimalFormat df = new DecimalFormat("0.00");
-        //dont forget to add impot on DefaultTableModel btw, idk
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.addRow(new Object[]{"Colgate Mouth-wash", "1",df.format(PriceOfItem) });
-        ItemCost();
-    }//GEN-LAST:event_jButton54ActionPerformed
+       // Name and price of the item
+    String itemName = "Mouth-Wash";
+    double priceOfItem = 29.00;
 
-    private void jButton55ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton55ActionPerformed
-         // TODO add your handling code here:
-        double PriceOfItem = 45.75;
-        //dont forget to add impot on DefaultTableModel btw, idk
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.addRow(new Object[]{"Safeguard soap", "1",PriceOfItem });
-        ItemCost();
-    }//GEN-LAST:event_jButton55ActionPerformed
+    // Prompt the user to enter the quantity
+    String input = JOptionPane.showInputDialog(this, "Enter quantity for " + itemName + ":", "Quantity", JOptionPane.PLAIN_MESSAGE);
+    if (input != null && !input.trim().isEmpty()) {
+        try {
+            int quantity = Integer.parseInt(input.trim());
+            if (quantity <= 0) {
+                JOptionPane.showMessageDialog(this, "Quantity must be greater than 0.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
 
-    private void jButton56ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton56ActionPerformed
-         // TODO add your handling code here:
-        double PriceOfItem = 48.25;
-        //dont forget to add impot on DefaultTableModel btw, idk
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.addRow(new Object[]{"Kojic soap", "1",PriceOfItem });
-        ItemCost();
-    }//GEN-LAST:event_jButton56ActionPerformed
+            // Calculate total price for the selected quantity
+            double totalPrice = priceOfItem * quantity;
 
-    private void jButton57ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton57ActionPerformed
+            // Format the price
+            DecimalFormat df = new DecimalFormat("0.00");
+
+            // Get the table model
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+            // Check if the item already exists in the table
+            boolean itemExists = false;
+            for (int i = 0; i < model.getRowCount(); i++) {
+                String existingItemName = model.getValueAt(i, 0).toString();
+                if (existingItemName.equals(itemName)) {
+                    // Update the quantity and price for the existing item
+                    int existingQuantity = Integer.parseInt(model.getValueAt(i, 1).toString());
+                    double existingPrice = Double.parseDouble(model.getValueAt(i, 2).toString());
+                    int newQuantity = existingQuantity + quantity;
+                    double newPrice = existingPrice + totalPrice;
+
+                    model.setValueAt(newQuantity, i, 1); // Update quantity
+                    model.setValueAt(df.format(newPrice), i, 2); // Update price
+                    itemExists = true;
+                    break;
+                }
+            }
+
+            // If the item does not exist, add a new row
+            if (!itemExists) {
+                model.addRow(new Object[]{itemName, quantity, df.format(totalPrice)});
+            }
+
+            // Update the total cost
+            ItemCost();
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid quantity. Please enter a valid number.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } else {
+        // User canceled or entered nothing
+        JOptionPane.showMessageDialog(this, "No quantity entered. Action canceled.", "Info", JOptionPane.INFORMATION_MESSAGE);
+    }
+    }//GEN-LAST:event_jButtonColgateActionPerformed
+
+    private void jbtnSafeGuardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSafeGuardActionPerformed
          // TODO add your handling code here:
-        double PriceOfItem = 68.75;
-        //dont forget to add impot on DefaultTableModel btw, idk
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.addRow(new Object[]{"Maya lotion", "1",PriceOfItem });
-        ItemCost();
-    }//GEN-LAST:event_jButton57ActionPerformed
+// Name and price of the item
+    String itemName = "Safeguard";
+    double priceOfItem = 45.00;
+
+    // Prompt the user to enter the quantity
+    String input = JOptionPane.showInputDialog(this, "Enter quantity for " + itemName + ":", "Quantity", JOptionPane.PLAIN_MESSAGE);
+    if (input != null && !input.trim().isEmpty()) {
+        try {
+            int quantity = Integer.parseInt(input.trim());
+            if (quantity <= 0) {
+                JOptionPane.showMessageDialog(this, "Quantity must be greater than 0.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Calculate total price for the selected quantity
+            double totalPrice = priceOfItem * quantity;
+
+            // Format the price
+            DecimalFormat df = new DecimalFormat("0.00");
+
+            // Get the table model
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+            // Check if the item already exists in the table
+            boolean itemExists = false;
+            for (int i = 0; i < model.getRowCount(); i++) {
+                String existingItemName = model.getValueAt(i, 0).toString();
+                if (existingItemName.equals(itemName)) {
+                    // Update the quantity and price for the existing item
+                    int existingQuantity = Integer.parseInt(model.getValueAt(i, 1).toString());
+                    double existingPrice = Double.parseDouble(model.getValueAt(i, 2).toString());
+                    int newQuantity = existingQuantity + quantity;
+                    double newPrice = existingPrice + totalPrice;
+
+                    model.setValueAt(newQuantity, i, 1); // Update quantity
+                    model.setValueAt(df.format(newPrice), i, 2); // Update price
+                    itemExists = true;
+                    break;
+                }
+            }
+
+            // If the item does not exist, add a new row
+            if (!itemExists) {
+                model.addRow(new Object[]{itemName, quantity, df.format(totalPrice)});
+            }
+
+            // Update the total cost
+            ItemCost();
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid quantity. Please enter a valid number.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } else {
+        // User canceled or entered nothing
+        JOptionPane.showMessageDialog(this, "No quantity entered. Action canceled.", "Info", JOptionPane.INFORMATION_MESSAGE);
+    }
+    }//GEN-LAST:event_jbtnSafeGuardActionPerformed
+
+    private void jbtnKojicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnKojicActionPerformed
+         // TODO add your handling code here:
+      // Name and price of the item
+    String itemName = "Kojic Soap";
+    double priceOfItem = 48.00;
+
+    // Prompt the user to enter the quantity
+    String input = JOptionPane.showInputDialog(this, "Enter quantity for " + itemName + ":", "Quantity", JOptionPane.PLAIN_MESSAGE);
+    if (input != null && !input.trim().isEmpty()) {
+        try {
+            int quantity = Integer.parseInt(input.trim());
+            if (quantity <= 0) {
+                JOptionPane.showMessageDialog(this, "Quantity must be greater than 0.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Calculate total price for the selected quantity
+            double totalPrice = priceOfItem * quantity;
+
+            // Format the price
+            DecimalFormat df = new DecimalFormat("0.00");
+
+            // Get the table model
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+            // Check if the item already exists in the table
+            boolean itemExists = false;
+            for (int i = 0; i < model.getRowCount(); i++) {
+                String existingItemName = model.getValueAt(i, 0).toString();
+                if (existingItemName.equals(itemName)) {
+                    // Update the quantity and price for the existing item
+                    int existingQuantity = Integer.parseInt(model.getValueAt(i, 1).toString());
+                    double existingPrice = Double.parseDouble(model.getValueAt(i, 2).toString());
+                    int newQuantity = existingQuantity + quantity;
+                    double newPrice = existingPrice + totalPrice;
+
+                    model.setValueAt(newQuantity, i, 1); // Update quantity
+                    model.setValueAt(df.format(newPrice), i, 2); // Update price
+                    itemExists = true;
+                    break;
+                }
+            }
+
+            // If the item does not exist, add a new row
+            if (!itemExists) {
+                model.addRow(new Object[]{itemName, quantity, df.format(totalPrice)});
+            }
+
+            // Update the total cost
+            ItemCost();
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid quantity. Please enter a valid number.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } else {
+        // User canceled or entered nothing
+        JOptionPane.showMessageDialog(this, "No quantity entered. Action canceled.", "Info", JOptionPane.INFORMATION_MESSAGE);
+    }
+    }//GEN-LAST:event_jbtnKojicActionPerformed
+
+    private void jbtnMayaLotionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnMayaLotionActionPerformed
+         // TODO add your handling code here:
+       // Name and price of the item
+    String itemName = "Maya Lotion";
+    double priceOfItem = 68.00;
+
+    // Prompt the user to enter the quantity
+    String input = JOptionPane.showInputDialog(this, "Enter quantity for " + itemName + ":", "Quantity", JOptionPane.PLAIN_MESSAGE);
+    if (input != null && !input.trim().isEmpty()) {
+        try {
+            int quantity = Integer.parseInt(input.trim());
+            if (quantity <= 0) {
+                JOptionPane.showMessageDialog(this, "Quantity must be greater than 0.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Calculate total price for the selected quantity
+            double totalPrice = priceOfItem * quantity;
+
+            // Format the price
+            DecimalFormat df = new DecimalFormat("0.00");
+
+            // Get the table model
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+            // Check if the item already exists in the table
+            boolean itemExists = false;
+            for (int i = 0; i < model.getRowCount(); i++) {
+                String existingItemName = model.getValueAt(i, 0).toString();
+                if (existingItemName.equals(itemName)) {
+                    // Update the quantity and price for the existing item
+                    int existingQuantity = Integer.parseInt(model.getValueAt(i, 1).toString());
+                    double existingPrice = Double.parseDouble(model.getValueAt(i, 2).toString());
+                    int newQuantity = existingQuantity + quantity;
+                    double newPrice = existingPrice + totalPrice;
+
+                    model.setValueAt(newQuantity, i, 1); // Update quantity
+                    model.setValueAt(df.format(newPrice), i, 2); // Update price
+                    itemExists = true;
+                    break;
+                }
+            }
+
+            // If the item does not exist, add a new row
+            if (!itemExists) {
+                model.addRow(new Object[]{itemName, quantity, df.format(totalPrice)});
+            }
+
+            // Update the total cost
+            ItemCost();
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid quantity. Please enter a valid number.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } else {
+        // User canceled or entered nothing
+        JOptionPane.showMessageDialog(this, "No quantity entered. Action canceled.", "Info", JOptionPane.INFORMATION_MESSAGE);
+    }
+    }//GEN-LAST:event_jbtnMayaLotionActionPerformed
 
     private void jbtnNotebookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnNotebookActionPerformed
         // TODO add your handling code here:
-        double PriceOfItem = 20.35;
-        //dont forget to add impot on DefaultTableModel btw, idk
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.addRow(new Object[]{"Notebook", "1",PriceOfItem });
-        ItemCost();
+        // Name and price of the item
+    String itemName = "Notebook";
+    double priceOfItem = 20.00;
+
+    // Prompt the user to enter the quantity
+    String input = JOptionPane.showInputDialog(this, "Enter quantity for " + itemName + ":", "Quantity", JOptionPane.PLAIN_MESSAGE);
+    if (input != null && !input.trim().isEmpty()) {
+        try {
+            int quantity = Integer.parseInt(input.trim());
+            if (quantity <= 0) {
+                JOptionPane.showMessageDialog(this, "Quantity must be greater than 0.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Calculate total price for the selected quantity
+            double totalPrice = priceOfItem * quantity;
+
+            // Format the price
+            DecimalFormat df = new DecimalFormat("0.00");
+
+            // Get the table model
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+            // Check if the item already exists in the table
+            boolean itemExists = false;
+            for (int i = 0; i < model.getRowCount(); i++) {
+                String existingItemName = model.getValueAt(i, 0).toString();
+                if (existingItemName.equals(itemName)) {
+                    // Update the quantity and price for the existing item
+                    int existingQuantity = Integer.parseInt(model.getValueAt(i, 1).toString());
+                    double existingPrice = Double.parseDouble(model.getValueAt(i, 2).toString());
+                    int newQuantity = existingQuantity + quantity;
+                    double newPrice = existingPrice + totalPrice;
+
+                    model.setValueAt(newQuantity, i, 1); // Update quantity
+                    model.setValueAt(df.format(newPrice), i, 2); // Update price
+                    itemExists = true;
+                    break;
+                }
+            }
+
+            // If the item does not exist, add a new row
+            if (!itemExists) {
+                model.addRow(new Object[]{itemName, quantity, df.format(totalPrice)});
+            }
+
+            // Update the total cost
+            ItemCost();
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid quantity. Please enter a valid number.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } else {
+        // User canceled or entered nothing
+        JOptionPane.showMessageDialog(this, "No quantity entered. Action canceled.", "Info", JOptionPane.INFORMATION_MESSAGE);
+    }
     }//GEN-LAST:event_jbtnNotebookActionPerformed
 
     private void jbtnGlueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnGlueActionPerformed
         // TODO add your handling code here:
-        double PriceOfItem = 25.00;
-        //dont forget to add impot on DefaultTableModel btw, idk
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.addRow(new Object[]{"Glue", "1",PriceOfItem });
-        ItemCost();
+       // Name and price of the item
+    String itemName = "Glue";
+    double priceOfItem = 25.00;
+
+    // Prompt the user to enter the quantity
+    String input = JOptionPane.showInputDialog(this, "Enter quantity for " + itemName + ":", "Quantity", JOptionPane.PLAIN_MESSAGE);
+    if (input != null && !input.trim().isEmpty()) {
+        try {
+            int quantity = Integer.parseInt(input.trim());
+            if (quantity <= 0) {
+                JOptionPane.showMessageDialog(this, "Quantity must be greater than 0.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Calculate total price for the selected quantity
+            double totalPrice = priceOfItem * quantity;
+
+            // Format the price
+            DecimalFormat df = new DecimalFormat("0.00");
+
+            // Get the table model
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+            // Check if the item already exists in the table
+            boolean itemExists = false;
+            for (int i = 0; i < model.getRowCount(); i++) {
+                String existingItemName = model.getValueAt(i, 0).toString();
+                if (existingItemName.equals(itemName)) {
+                    // Update the quantity and price for the existing item
+                    int existingQuantity = Integer.parseInt(model.getValueAt(i, 1).toString());
+                    double existingPrice = Double.parseDouble(model.getValueAt(i, 2).toString());
+                    int newQuantity = existingQuantity + quantity;
+                    double newPrice = existingPrice + totalPrice;
+
+                    model.setValueAt(newQuantity, i, 1); // Update quantity
+                    model.setValueAt(df.format(newPrice), i, 2); // Update price
+                    itemExists = true;
+                    break;
+                }
+            }
+
+            // If the item does not exist, add a new row
+            if (!itemExists) {
+                model.addRow(new Object[]{itemName, quantity, df.format(totalPrice)});
+            }
+
+            // Update the total cost
+            ItemCost();
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid quantity. Please enter a valid number.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } else {
+        // User canceled or entered nothing
+        JOptionPane.showMessageDialog(this, "No quantity entered. Action canceled.", "Info", JOptionPane.INFORMATION_MESSAGE);
+    }
     }//GEN-LAST:event_jbtnGlueActionPerformed
 
     private void jbtnYellowPadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnYellowPadActionPerformed
         // TODO add your handling code here:
-        double PriceOfItem = 99.20;
-        //dont forget to add impot on DefaultTableModel btw, idk
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.addRow(new Object[]{"Yellow pad", "1",PriceOfItem });
-        ItemCost();
+        // Name and price of the item
+    String itemName = "Yellow Pad";
+    double priceOfItem = 99.00;
+
+    // Prompt the user to enter the quantity
+    String input = JOptionPane.showInputDialog(this, "Enter quantity for " + itemName + ":", "Quantity", JOptionPane.PLAIN_MESSAGE);
+    if (input != null && !input.trim().isEmpty()) {
+        try {
+            int quantity = Integer.parseInt(input.trim());
+            if (quantity <= 0) {
+                JOptionPane.showMessageDialog(this, "Quantity must be greater than 0.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Calculate total price for the selected quantity
+            double totalPrice = priceOfItem * quantity;
+
+            // Format the price
+            DecimalFormat df = new DecimalFormat("0.00");
+
+            // Get the table model
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+            // Check if the item already exists in the table
+            boolean itemExists = false;
+            for (int i = 0; i < model.getRowCount(); i++) {
+                String existingItemName = model.getValueAt(i, 0).toString();
+                if (existingItemName.equals(itemName)) {
+                    // Update the quantity and price for the existing item
+                    int existingQuantity = Integer.parseInt(model.getValueAt(i, 1).toString());
+                    double existingPrice = Double.parseDouble(model.getValueAt(i, 2).toString());
+                    int newQuantity = existingQuantity + quantity;
+                    double newPrice = existingPrice + totalPrice;
+
+                    model.setValueAt(newQuantity, i, 1); // Update quantity
+                    model.setValueAt(df.format(newPrice), i, 2); // Update price
+                    itemExists = true;
+                    break;
+                }
+            }
+
+            // If the item does not exist, add a new row
+            if (!itemExists) {
+                model.addRow(new Object[]{itemName, quantity, df.format(totalPrice)});
+            }
+
+            // Update the total cost
+            ItemCost();
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid quantity. Please enter a valid number.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } else {
+        // User canceled or entered nothing
+        JOptionPane.showMessageDialog(this, "No quantity entered. Action canceled.", "Info", JOptionPane.INFORMATION_MESSAGE);
+    }
     }//GEN-LAST:event_jbtnYellowPadActionPerformed
 
     private void jbtnCrayolaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnCrayolaActionPerformed
         // TODO add your handling code here:
-         double PriceOfItem = 114.00;
-        //dont forget to add impot on DefaultTableModel btw, idk
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.addRow(new Object[]{"Crayola", "1",PriceOfItem });
-        ItemCost();
+       // Name and price of the item
+    String itemName = "Crayola";
+    double priceOfItem = 114.00;
+
+    // Prompt the user to enter the quantity
+    String input = JOptionPane.showInputDialog(this, "Enter quantity for " + itemName + ":", "Quantity", JOptionPane.PLAIN_MESSAGE);
+    if (input != null && !input.trim().isEmpty()) {
+        try {
+            int quantity = Integer.parseInt(input.trim());
+            if (quantity <= 0) {
+                JOptionPane.showMessageDialog(this, "Quantity must be greater than 0.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Calculate total price for the selected quantity
+            double totalPrice = priceOfItem * quantity;
+
+            // Format the price
+            DecimalFormat df = new DecimalFormat("0.00");
+
+            // Get the table model
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+            // Check if the item already exists in the table
+            boolean itemExists = false;
+            for (int i = 0; i < model.getRowCount(); i++) {
+                String existingItemName = model.getValueAt(i, 0).toString();
+                if (existingItemName.equals(itemName)) {
+                    // Update the quantity and price for the existing item
+                    int existingQuantity = Integer.parseInt(model.getValueAt(i, 1).toString());
+                    double existingPrice = Double.parseDouble(model.getValueAt(i, 2).toString());
+                    int newQuantity = existingQuantity + quantity;
+                    double newPrice = existingPrice + totalPrice;
+
+                    model.setValueAt(newQuantity, i, 1); // Update quantity
+                    model.setValueAt(df.format(newPrice), i, 2); // Update price
+                    itemExists = true;
+                    break;
+                }
+            }
+
+            // If the item does not exist, add a new row
+            if (!itemExists) {
+                model.addRow(new Object[]{itemName, quantity, df.format(totalPrice)});
+            }
+
+            // Update the total cost
+            ItemCost();
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid quantity. Please enter a valid number.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } else {
+        // User canceled or entered nothing
+        JOptionPane.showMessageDialog(this, "No quantity entered. Action canceled.", "Info", JOptionPane.INFORMATION_MESSAGE);
+    }
     }//GEN-LAST:event_jbtnCrayolaActionPerformed
 
     private void jbtnPayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnPayActionPerformed
@@ -1145,12 +2243,12 @@ public class PosariMain extends javax.swing.JFrame {
             }
         });
     }
+    
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton54;
-    private javax.swing.JButton jButton55;
-    private javax.swing.JButton jButton56;
-    private javax.swing.JButton jButton57;
+    private javax.swing.JButton jButtonColgate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -1188,6 +2286,7 @@ public class PosariMain extends javax.swing.JFrame {
     private javax.swing.JButton jbtn7;
     private javax.swing.JButton jbtn8;
     private javax.swing.JButton jbtn9;
+    private javax.swing.JButton jbtnBeefChoco;
     private javax.swing.JButton jbtnClear;
     private javax.swing.JButton jbtnCrayola;
     private javax.swing.JButton jbtnCupnoodles;
@@ -1196,7 +2295,9 @@ public class PosariMain extends javax.swing.JFrame {
     private javax.swing.JButton jbtnFitnright;
     private javax.swing.JButton jbtnGAlcohol;
     private javax.swing.JButton jbtnGlue;
+    private javax.swing.JButton jbtnKojic;
     private javax.swing.JButton jbtnLuncheonmeat;
+    private javax.swing.JButton jbtnMayaLotion;
     private javax.swing.JButton jbtnMinMaid;
     private javax.swing.JButton jbtnMinWater;
     private javax.swing.JButton jbtnNotebook;
@@ -1206,8 +2307,8 @@ public class PosariMain extends javax.swing.JFrame {
     private javax.swing.JButton jbtnPrint;
     private javax.swing.JButton jbtnRemove;
     private javax.swing.JButton jbtnReset;
+    private javax.swing.JButton jbtnSafeGuard;
     private javax.swing.JButton jbtnSardines;
-    private javax.swing.JButton jbtnSpicynoodles;
     private javax.swing.JButton jbtnYellowPad;
     private javax.swing.JComboBox<String> jcboPayment;
     private javax.swing.JButton jtbnInstantmami;

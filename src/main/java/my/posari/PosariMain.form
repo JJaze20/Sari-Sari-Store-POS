@@ -264,7 +264,7 @@
                   </Group>
                   <EmptySpace pref="42" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="jButton54" alignment="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="jButtonColgate" alignment="0" pref="0" max="32767" attributes="0"/>
                       <Component id="jbtnMinWater" alignment="0" pref="0" max="32767" attributes="0"/>
                       <Component id="jbtnLuncheonmeat" alignment="0" min="-2" pref="128" max="-2" attributes="0"/>
                       <Component id="jbtnNotebook" pref="0" max="32767" attributes="0"/>
@@ -273,20 +273,20 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jbtnSardines" alignment="1" min="-2" pref="132" max="-2" attributes="0"/>
                       <Component id="jbtnFitnright" alignment="1" min="-2" pref="132" max="-2" attributes="0"/>
-                      <Component id="jButton55" alignment="1" min="-2" pref="132" max="-2" attributes="0"/>
+                      <Component id="jbtnSafeGuard" alignment="1" min="-2" pref="132" max="-2" attributes="0"/>
                       <Component id="jbtnGlue" alignment="1" min="-2" pref="132" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="33" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jbtnSpicynoodles" alignment="1" min="-2" pref="132" max="-2" attributes="0"/>
+                      <Component id="jbtnBeefChoco" alignment="1" min="-2" pref="132" max="-2" attributes="0"/>
                       <Component id="jtbnInstantmami" alignment="1" min="-2" pref="132" max="-2" attributes="0"/>
-                      <Component id="jButton56" alignment="1" min="-2" pref="132" max="-2" attributes="0"/>
+                      <Component id="jbtnKojic" alignment="1" min="-2" pref="132" max="-2" attributes="0"/>
                       <Component id="jbtnYellowPad" alignment="1" min="-2" pref="132" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="31" pref="31" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="jButton57" alignment="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="jbtnMayaLotion" alignment="0" pref="0" max="32767" attributes="0"/>
                           <Component id="jbtnPepsi" alignment="0" pref="0" max="32767" attributes="0"/>
                           <Component id="jtbnJollycorn" alignment="0" min="-2" pref="126" max="-2" attributes="0"/>
                       </Group>
@@ -326,21 +326,21 @@
                       </Group>
                       <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jbtnSpicynoodles" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="jbtnBeefChoco" min="-2" pref="100" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButton56" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="jbtnKojic" min="-2" pref="100" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="jbtnSardines" min="-2" pref="100" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButton55" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="jbtnSafeGuard" min="-2" pref="100" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jButton54" alignment="1" min="-2" pref="100" max="-2" attributes="0"/>
+                          <Component id="jButtonColgate" alignment="1" min="-2" pref="100" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jbtnPepsi" min="-2" pref="100" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jButton57" min="-2" pref="100" max="-2" attributes="0"/>
+                          <Component id="jbtnMayaLotion" min="-2" pref="100" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -477,14 +477,14 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnSardinesActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jbtnSpicynoodles">
+        <Component class="javax.swing.JButton" name="jbtnBeefChoco">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/images/BifChocoDip.jpg"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnSpicynoodlesActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnBeefChocoActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jbtnPepsi">
@@ -497,44 +497,44 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnPepsiActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton54">
+        <Component class="javax.swing.JButton" name="jButtonColgate">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/images/colgate.jpg"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton54ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonColgateActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton55">
+        <Component class="javax.swing.JButton" name="jbtnSafeGuard">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/images/safeguard.jpg"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton55ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnSafeGuardActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton56">
+        <Component class="javax.swing.JButton" name="jbtnKojic">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/images/kojic.jpg"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton56ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnKojicActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton57">
+        <Component class="javax.swing.JButton" name="jbtnMayaLotion">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/images/maya.jpg"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton57ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnMayaLotionActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jbtnNotebook">

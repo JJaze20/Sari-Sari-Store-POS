@@ -1666,7 +1666,7 @@ public String generateReceiptContent() {
     private void jButtonColgateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonColgateActionPerformed
          // TODO add your handling code here:
        // Name and price of the item
-    String itemName = "Mouth-Wash Colgate";
+    String itemName = "Mouth-Wash";
     double priceOfItem = 29.00;
 
     // Prompt the user to enter the quantity

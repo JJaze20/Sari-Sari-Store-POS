@@ -114,7 +114,7 @@ public class PosariMain extends javax.swing.JFrame {
         jbtnExit = new javax.swing.JButton();
         jbtnPay = new javax.swing.JButton();
         jbtnReset = new javax.swing.JButton();
-        jbtnPrint = new javax.swing.JButton();
+        jbtnRemove1 = new javax.swing.JButton();
         jbtnRemove = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -603,7 +603,7 @@ public class PosariMain extends javax.swing.JFrame {
                 jbtnExitActionPerformed(evt);
             }
         });
-        jPanel16.add(jbtnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 330, 60));
+        jPanel16.add(jbtnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 190, 50));
 
         jbtnPay.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jbtnPay.setText("Pay");
@@ -612,7 +612,7 @@ public class PosariMain extends javax.swing.JFrame {
                 jbtnPayActionPerformed(evt);
             }
         });
-        jPanel16.add(jbtnPay, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 190, 50));
+        jPanel16.add(jbtnPay, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 190, 50));
 
         jbtnReset.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jbtnReset.setText("Reset");
@@ -621,27 +621,27 @@ public class PosariMain extends javax.swing.JFrame {
                 jbtnResetActionPerformed(evt);
             }
         });
-        jPanel16.add(jbtnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 190, 50));
+        jPanel16.add(jbtnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 190, 50));
 
-        jbtnPrint.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jbtnPrint.setText("Print");
-        jbtnPrint.addActionListener(new java.awt.event.ActionListener() {
+        jbtnRemove1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jbtnRemove1.setText("Remove");
+        jbtnRemove1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnPrintActionPerformed(evt);
+                jbtnRemove1ActionPerformed(evt);
             }
         });
-        jPanel16.add(jbtnPrint, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 190, 50));
+        jPanel16.add(jbtnRemove1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 190, 50));
 
         jbtnRemove.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jbtnRemove.setText("Remove");
+        jbtnRemove.setText("Admin Panel");
         jbtnRemove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtnRemoveActionPerformed(evt);
             }
         });
-        jPanel16.add(jbtnRemove, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 190, 50));
+        jPanel16.add(jbtnRemove, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 400, 50));
 
-        jPanel8.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 30, 420, 200));
+        jPanel8.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 30, 420, 200));
 
         getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 1370, 250));
 
@@ -1068,70 +1068,6 @@ public class PosariMain extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "No quantity entered. Action canceled.", "Info", JOptionPane.INFORMATION_MESSAGE);
     }
     }//GEN-LAST:event_jbtnPencilActionPerformed
-
-    private void jbtnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnPrintActionPerformed
-        // TODO add your handling code here:      
-          if (jtxtDisplay.getText().trim().isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Please enter the cash amount.", "Error", JOptionPane.ERROR_MESSAGE);
-        return;
-    }
-
-    try {
-        // Parse the cash and total amounts
-        double cash = Double.parseDouble(jtxtDisplay.getText().trim());
-        String totalText = jtxtTotal.getText().replaceAll("[^\\d.]", ""); // Remove currency symbols
-        double total = Double.parseDouble(totalText);
-
-        // Check if cash is sufficient
-        if (cash < total) {
-            JOptionPane.showMessageDialog(this, "Your money is not enough to buy the item.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        // Generate and display the receipt
-        JDialog receiptDialog = new JDialog(this, "Receipt Preview", true);
-        receiptDialog.setSize(400, 600);
-        receiptDialog.setLocationRelativeTo(this);
-
-        // Create a JTextArea to display the receipt content
-        JTextArea receiptArea = new JTextArea();
-        receiptArea.setEditable(false);
-        receiptArea.setText(generateReceiptContent()); // Generate receipt content dynamically
-        JScrollPane scrollPane = new JScrollPane(receiptArea);
-
-        // Add the JTextArea to the dialog
-        receiptDialog.add(scrollPane);
-
-        // Add a Print button to the dialog
-        JButton printButton = new JButton("Print");
-        printButton.addActionListener(e -> {
-            MessageFormat header = new MessageFormat("Receipt");
-            MessageFormat footer = new MessageFormat("Page {0, number, integer}");
-            try {
-                receiptArea.print(header, footer);
-            } catch (java.awt.print.PrinterException ex) {
-                JOptionPane.showMessageDialog(this, "Printing failed: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-            }
-            receiptDialog.dispose(); // Close the dialog after printing
-        });
-
-        // Add a Cancel button to the dialog
-        JButton cancelButton = new JButton("Cancel");
-        cancelButton.addActionListener(e -> receiptDialog.dispose());
-
-        // Add buttons to the dialog
-        JPanel buttonPanel = new JPanel();
-        buttonPanel.add(printButton);
-        buttonPanel.add(cancelButton);
-        receiptDialog.add(buttonPanel, BorderLayout.SOUTH);
-
-        // Show the dialog
-        receiptDialog.setVisible(true);
-
-    } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(this, "Invalid input. Please enter numeric values for cash.", "Error", JOptionPane.ERROR_MESSAGE);
-    }
-    }//GEN-LAST:event_jbtnPrintActionPerformed
 public String generateReceiptContent() {
     // Logic to generate receipt conten
      StringBuilder receipt = new StringBuilder();
@@ -2184,6 +2120,67 @@ public String generateReceiptContent() {
         jtxtChange.setText("");
         jtxtDisplay.setText("");
     }
+    // TODO add your handling code here:      
+          if (jtxtDisplay.getText().trim().isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Please enter the cash amount.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    try {
+        // Parse the cash and total amounts
+        double cash = Double.parseDouble(jtxtDisplay.getText().trim());
+        String totalText = jtxtTotal.getText().replaceAll("[^\\d.]", ""); // Remove currency symbols
+        double total = Double.parseDouble(totalText);
+
+        // Check if cash is sufficient
+        if (cash < total) {
+            JOptionPane.showMessageDialog(this, "Your money is not enough to buy the item.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Generate and display the receipt
+        JDialog receiptDialog = new JDialog(this, "Receipt Preview", true);
+        receiptDialog.setSize(400, 600);
+        receiptDialog.setLocationRelativeTo(this);
+
+        // Create a JTextArea to display the receipt content
+        JTextArea receiptArea = new JTextArea();
+        receiptArea.setEditable(false);
+        receiptArea.setText(generateReceiptContent()); // Generate receipt content dynamically
+        JScrollPane scrollPane = new JScrollPane(receiptArea);
+
+        // Add the JTextArea to the dialog
+        receiptDialog.add(scrollPane);
+
+        // Add a Print button to the dialog
+        JButton printButton = new JButton("Print");
+        printButton.addActionListener(e -> {
+            MessageFormat header = new MessageFormat("Receipt");
+            MessageFormat footer = new MessageFormat("Page {0, number, integer}");
+            try {
+                receiptArea.print(header, footer);
+            } catch (java.awt.print.PrinterException ex) {
+                JOptionPane.showMessageDialog(this, "Printing failed: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            }
+            receiptDialog.dispose(); // Close the dialog after printing
+        });
+
+        // Add a Cancel button to the dialog
+        JButton cancelButton = new JButton("Cancel");
+        cancelButton.addActionListener(e -> receiptDialog.dispose());
+
+        // Add buttons to the dialog
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.add(printButton);
+        buttonPanel.add(cancelButton);
+        receiptDialog.add(buttonPanel, BorderLayout.SOUTH);
+
+        // Show the dialog
+        receiptDialog.setVisible(true);
+
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Invalid input. Please enter numeric values for cash.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
     }//GEN-LAST:event_jbtnPayActionPerformed
 
     private void jtxtTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtTotalActionPerformed
@@ -2191,14 +2188,11 @@ public String generateReceiptContent() {
     }//GEN-LAST:event_jtxtTotalActionPerformed
 
     private void jbtnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRemoveActionPerformed
-    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-    int RemoveItem = jTable1.getSelectedRow();
-    if(RemoveItem >= 0)
-    {
-        model.removeRow(RemoveItem);
-    }
-        
-    ItemCost();
+    AdminLog admin = new AdminLog();
+        admin.setVisible(true);
+        admin.pack();
+        admin.setLocationRelativeTo(null);
+        this.dispose();    
     }//GEN-LAST:event_jbtnRemoveActionPerformed
 
     private void jtxtSubTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtSubTotalActionPerformed
@@ -2208,6 +2202,10 @@ public String generateReceiptContent() {
     private void jcboPaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcboPaymentActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jcboPaymentActionPerformed
+
+    private void jbtnRemove1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRemove1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtnRemove1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2304,8 +2302,8 @@ public String generateReceiptContent() {
     private javax.swing.JButton jbtnPay;
     private javax.swing.JButton jbtnPencil;
     private javax.swing.JButton jbtnPepsi;
-    private javax.swing.JButton jbtnPrint;
     private javax.swing.JButton jbtnRemove;
+    private javax.swing.JButton jbtnRemove1;
     private javax.swing.JButton jbtnReset;
     private javax.swing.JButton jbtnSafeGuard;
     private javax.swing.JButton jbtnSardines;

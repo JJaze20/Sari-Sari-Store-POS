@@ -21,6 +21,7 @@ import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import javax.swing.JOptionPane;
 
+import java.sql.*;
 
 /**
  *
@@ -32,9 +33,35 @@ public class PosariMain extends javax.swing.JFrame {
      * Creates new form PosariMain
      */
 
+    public Connection con;
+    public Statement statement;
+    public String sql;
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/storeposlog1"; 
+    private static final String DB_USER = "root"; 
+    private static final String DB_PASSWORD = "";
 
     public PosariMain() {
-        initComponents();
+        initComponents();     
+        
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            con=DriverManager.getConnection(DB_URL,DB_USER,DB_PASSWORD);
+            statement=con.createStatement();
+        }
+        catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+    }
+    
+    public void insert(Double total){
+        try{
+            sql = "insert into transactionhistory (receipt_id, transact_date, prods_sold, total_revenue) values(total,total,total,total)";
+            statement.executeUpdate(sql);            
+            JOptionPane.showMessageDialog(null, "Transaction Recorded");
+        }
+        catch(Exception ex){
+            System.out.println("Error: " + ex.getMessage());
+        }
     }
 
     /**
@@ -477,7 +504,15 @@ public class PosariMain extends javax.swing.JFrame {
             new String [] {
                 "Item", "Qty", "Amount"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 270, 490));
@@ -567,9 +602,19 @@ public class PosariMain extends javax.swing.JFrame {
         jPanel12.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
 
         jtxtChange.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jtxtChange.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtChangeActionPerformed(evt);
+            }
+        });
         jPanel12.add(jtxtChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 200, 50));
 
         jtxtDisplay.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jtxtDisplay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtDisplayActionPerformed(evt);
+            }
+        });
         jPanel12.add(jtxtDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 200, 50));
 
         jcboPayment.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
@@ -2080,7 +2125,7 @@ public String generateReceiptContent() {
     }//GEN-LAST:event_jbtnCrayolaActionPerformed
 
     private void jbtnPayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnPayActionPerformed
-     if (jcboPayment.getSelectedItem().equals("Cash")) {
+ if (jcboPayment.getSelectedItem().equals("Cash")) {
         try {
         if (jtxtDisplay.getText().trim().isEmpty() || jtxtTotal.getText().trim().isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please ensure both cash and total fields are filled.");
@@ -2092,7 +2137,6 @@ public String generateReceiptContent() {
         // FIX: Remove currency symbol before parsing
         String totalText = jtxtTotal.getText().replaceAll("[^\\d.]", "");
         double total = Double.parseDouble(totalText);
-
         double change = cash - total;
 
         if (change < 0) {
@@ -2131,7 +2175,8 @@ public String generateReceiptContent() {
         double cash = Double.parseDouble(jtxtDisplay.getText().trim());
         String totalText = jtxtTotal.getText().replaceAll("[^\\d.]", ""); // Remove currency symbols
         double total = Double.parseDouble(totalText);
-
+        insert(total);
+        
         // Check if cash is sufficient
         if (cash < total) {
             JOptionPane.showMessageDialog(this, "Your money is not enough to buy the item.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -2177,10 +2222,12 @@ public String generateReceiptContent() {
 
         // Show the dialog
         receiptDialog.setVisible(true);
-
+        
+        
     } catch (NumberFormatException e) {
         JOptionPane.showMessageDialog(this, "Invalid input. Please enter numeric values for cash.", "Error", JOptionPane.ERROR_MESSAGE);
     }
+    
     }//GEN-LAST:event_jbtnPayActionPerformed
 
     private void jtxtTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtTotalActionPerformed
@@ -2206,6 +2253,14 @@ public String generateReceiptContent() {
     private void jbtnRemove1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRemove1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtnRemove1ActionPerformed
+
+    private void jtxtDisplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtDisplayActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxtDisplayActionPerformed
+
+    private void jtxtChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtChangeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxtChangeActionPerformed
 
     /**
      * @param args the command line arguments

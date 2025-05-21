@@ -31,11 +31,18 @@ import java.awt.event.MouseEvent;  // For MouseListener
  *
  * @author user
  */
+import java.sql.*;
+import java.text.*;
+import java.util.*;
+
 public class PosariMain extends javax.swing.JFrame {
 
     /**
      * Creates new form PosariMain
      */
+    public Connection con;
+    public Statement statement;
+    public String sql;
     private static final String DB_URL = "jdbc:mysql://localhost:3306/storeposlog1";
     private static final String DB_USER = "root";
     private static final String DB_PASSWORD = "";
@@ -44,6 +51,44 @@ public class PosariMain extends javax.swing.JFrame {
         initComponents();
         // Call the method to fetch data and display buttons
         fetchDataAndDisplayButtons();
+        
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            con=DriverManager.getConnection(DB_URL,DB_USER,DB_PASSWORD);
+            statement=con.createStatement();
+        }
+        catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+    }
+    private void toTransactionDatabase(String receiptNumber, int qtySold, Double revenue) {
+    try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
+        String query = "INSERT INTO transactionhistory (transact_date, receipt_id, prods_sold, total_revenue) VALUES (?, ?, ?, ?)";
+        String qty = String.valueOf(qtySold);
+        String rev = String.valueOf(revenue);
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, generateTime()); // Generate Receipt #
+            statement.setString(2, receiptNumber); // Set date of purchase
+            statement.setString(3, qty);
+            statement.setString(4, rev);
+            statement.executeUpdate(); // Execute the insert query
+        }
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, "Error uploading history: " + e.getMessage());
+    }
+}
+    
+    public String generateTime(){
+        java.util.Date date = new java.util.Date();
+        SimpleDateFormat Formatdate = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss ",Locale.getDefault());
+        String dateDisplay = Formatdate.format(date);
+        return dateDisplay;
+    }
+    
+    public String generateReceiptNumber(){
+        int receiptNo = (int)(Math.random()*9999999);
+        String receipt = Integer.toString(receiptNo);
+        return receipt;
     }
 
  private void setupTable() {
@@ -105,6 +150,7 @@ private void fetchDataAndDisplayButtons() {
 
                         if (option == 1) {  // If "Add" button is pressed
                             addToTable(name, price);  // Add to JTable
+                            
                         }
                     } else if (e.getButton() == MouseEvent.BUTTON1) {  // Detect left-click (BUTTON1)
                         // Automatically add to JTable on left-click
@@ -347,7 +393,15 @@ private void addToTable(String name, double price) {
             new String [] {
                 "Item", "Qty", "Amount"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 270, 490));
@@ -696,10 +750,16 @@ private void addToTable(String name, double price) {
     }//GEN-LAST:event_jbtn0ActionPerformed
     public String generateReceiptContent() {
         // Logic to generate receipt conten
+        String receiptNumber = generateReceiptNumber();
+        int qtySold = 0;
         StringBuilder receipt = new StringBuilder();
-        receipt.append("        ********** GOON SQUAD SARI-SARI STORE**********\n");
-        receipt.append("Item\tQuantity\tPrice\n");
-        receipt.append("----------------------------\n");
+        
+        //HEADER
+        receipt.append("        ******** GOON SQUAD SARI-SARI STORE **********\n");
+        receipt.append(String.format("%-40s\t %3s\t %10s\t\n", "Item", "Quantity", "Price"));
+        receipt.append("        Receipt Number: " + receiptNumber + "\n");;
+        receipt.append("----------------------------------------------------------------------------\n");
+        
 
         // Iterate through the rows of the JTable
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
@@ -707,22 +767,43 @@ private void addToTable(String name, double price) {
             String itemName = model.getValueAt(i, 0).toString(); // Item name
             String quantity = model.getValueAt(i, 1).toString(); // Quantity
             String price = model.getValueAt(i, 2).toString();    // Price
+            
+            qtySold += Integer.parseInt(quantity);
 
             // Append item details to the receipt
-            receipt.append(itemName).append("\t")
-                    .append(quantity).append("\t\t")
-                    .append(price).append("\n");
+            receipt.append(String.format("%-25s\t %5s\t %10s\t\n", 
+            itemName, 
+            quantity, 
+            price));
         }
 
-        receipt.append("----------------------------\n");
+         receipt.append("----------------------------------------------------------------------------\n");
 
         // Add total cost
-        String totalCost = jtxtTotal.getText(); // Assuming jtxtTotal contains the total cost
-        receipt.append("Total: ").append(totalCost).append("\n");
-
-        // Add footer
+        String totalText = jtxtTotal.getText().replaceAll("[^\\d.]", ""); // Clean ₱ if present
+        double total = Double.parseDouble(totalText);
+        receipt.append(String.format("Total:  ₱ %.2f\n", total));
+        
+        // Change (optional if present)
+        String changeText = jtxtChange.getText().replaceAll("[^\\d.]", ""); // Clean ₱ if present
+        if (!changeText.isEmpty()) {
+        double change = Double.parseDouble(changeText);
+        receipt.append(String.format("Change: ₱ %.2f\n", change));
+        }
+        
+         // Footer
         receipt.append("****************************\n");
         receipt.append("Thank you for shopping with us!\n");
+        
+        //Upload data to Database
+        try{
+            toTransactionDatabase(receiptNumber,qtySold,total);
+            JOptionPane.showMessageDialog(this, "Successfully uploaded the data!");
+        }
+        catch(Exception ex){
+            JOptionPane.showMessageDialog(this, "Error uploading data to the database: " + ex.getMessage(),
+                                      "Database Error", JOptionPane.ERROR_MESSAGE);
+        }
 
         return receipt.toString();
     }
@@ -743,6 +824,7 @@ private void addToTable(String name, double price) {
         jtxtTotal.setText("");
         jtxtDisplay.setText("");
         jtxtSubTotal.setText("");
+        jtxtDisplay.setEditable(true);
     }//GEN-LAST:event_jbtnResetActionPerformed
 
     private void jbtnPayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnPayActionPerformed
@@ -847,6 +929,7 @@ private void addToTable(String name, double price) {
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Invalid input. Please enter numeric values for cash.", "Error", JOptionPane.ERROR_MESSAGE);
         }
+        jtxtDisplay.setEditable(false);
     }//GEN-LAST:event_jbtnPayActionPerformed
 
     private void jtxtTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtTotalActionPerformed
@@ -871,6 +954,16 @@ private void addToTable(String name, double price) {
 
     private void jbtnRemove1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRemove1ActionPerformed
         // TODO add your handling code here:
+        int selectedRow = jTable1.getSelectedRow();
+        
+        if(selectedRow != -1){
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            model.removeRow(selectedRow);
+            JOptionPane.showMessageDialog(this, "Selected item has been removed.");
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Please select a row to remove.");
+        }
     }//GEN-LAST:event_jbtnRemove1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

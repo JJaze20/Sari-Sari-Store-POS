@@ -190,7 +190,7 @@ if (password.isEmpty()) {
 boolean passwordMatch = false;
 
 try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
-    String query = "SELECT AdminPassword FROM admin";
+    String query = "SELECT AdminPassword FROM admin2";
     try (PreparedStatement statement = connection.prepareStatement(query);
          ResultSet resultSet = statement.executeQuery()) {
 

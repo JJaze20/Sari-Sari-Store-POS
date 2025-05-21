@@ -626,6 +626,7 @@ private void addToTable(String name, double price) {
 
 
     private void jbtn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn9ActionPerformed
+
 //code to Display the numbers
         String Enternumber = jtxtDisplay.getText();
 

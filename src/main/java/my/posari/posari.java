@@ -138,10 +138,12 @@ public class posari extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(242, 242, 242));
         jLabel6.setText("Copyright © RESIBO. All rights reserved.");
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\Sari-Sari-Store-POS\\src\\main\\resources\\images\\RESIBO.png")); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\peepee\\Sari-Sari-Store-POS\\src\\main\\resources\\RESIBO.png")); // NOI18N
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setForeground(new java.awt.Color(53, 104, 190));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("copyright © RESIBO. All rights reserved.");
 
         javax.swing.GroupLayout LeftCoverPageLayout = new javax.swing.GroupLayout(LeftCoverPage);
@@ -152,20 +154,18 @@ public class posari extends javax.swing.JFrame {
                 .addGroup(LeftCoverPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(LeftCoverPageLayout.createSequentialGroup()
                         .addGap(139, 139, 139)
-                        .addComponent(jLabel6))
-                    .addGroup(LeftCoverPageLayout.createSequentialGroup()
-                        .addGap(132, 132, 132)
-                        .addGroup(LeftCoverPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5))))
-                .addContainerGap(124, Short.MAX_VALUE))
+                        .addComponent(jLabel6)
+                        .addGap(0, 118, Short.MAX_VALUE))
+                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         LeftCoverPageLayout.setVerticalGroup(
             LeftCoverPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LeftCoverPageLayout.createSequentialGroup()
                 .addGap(71, 71, 71)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(0, 0, 0)
                 .addComponent(jLabel5)
                 .addGap(233, 233, 233)
                 .addComponent(jLabel6)
@@ -178,7 +178,7 @@ public class posari extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(LeftCoverPage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addComponent(RightCoverPage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(

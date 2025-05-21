@@ -492,6 +492,7 @@ private void addToTable(String name, double price) {
         jLabel3.setText("Tax");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
+        jtxtTotal.setEditable(false);
         jtxtTotal.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jtxtTotal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -500,6 +501,7 @@ private void addToTable(String name, double price) {
         });
         jPanel2.add(jtxtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 220, 50));
 
+        jtxtSubTotal.setEditable(false);
         jtxtSubTotal.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jtxtSubTotal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -508,6 +510,7 @@ private void addToTable(String name, double price) {
         });
         jPanel2.add(jtxtSubTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 22, 220, 50));
 
+        jtxtTax.setEditable(false);
         jtxtTax.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jPanel2.add(jtxtTax, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 220, 50));
 
@@ -538,6 +541,7 @@ private void addToTable(String name, double price) {
         jLabel6.setText("Cash");
         jPanel12.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
 
+        jtxtChange.setEditable(false);
         jtxtChange.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jPanel12.add(jtxtChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 200, 50));
 
@@ -896,6 +900,11 @@ private void addToTable(String name, double price) {
                     JOptionPane.showMessageDialog(this, "Insufficient balance. Please provide enough cash.");
                     return;
                 }
+                
+                if(total <= 0){
+                    JOptionPane.showMessageDialog(this, "Empty cart, please insert items.");
+                    return;
+                }
 
                 jtxtChange.setText(String.format("₱ %.2f", change)); // Add ₱ for display
                 JOptionPane.showMessageDialog(this, "Payment successful! Change: " + String.format("₱ %.2f", change));
@@ -906,6 +915,13 @@ private void addToTable(String name, double price) {
                 JOptionPane.showMessageDialog(this, "Invalid input. Please enter numeric values for cash and total.");
             }
         } else if (jcboPayment.getSelectedItem().equals("G-Cash")) {
+            //Check if cart is empty
+            String totalText = jtxtTotal.getText().replaceAll("[^\\d.]", "");
+            double total = Double.parseDouble(totalText);
+            if(total <= 0){
+                    JOptionPane.showMessageDialog(this, "Empty cart, please insert items.");
+                    return;
+                }
             // If "GCash" is selected, open the GCash website
             try {
                 Desktop.getDesktop().browse(new URI("https://www.gcash.com"));
@@ -1004,11 +1020,16 @@ private void addToTable(String name, double price) {
     private void jbtnRemove1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRemove1ActionPerformed
         // TODO add your handling code here:
         int selectedRow = jTable1.getSelectedRow();
+        int selectedColumn = 2;
         
         if(selectedRow != -1){
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
             model.removeRow(selectedRow);
             JOptionPane.showMessageDialog(this, "Selected item has been removed.");
+            // Calculate total price for the selected quantity
+            double totalPrice = 0.0;
+            // Update the total cost
+            ItemCost();
         }
         else{
             JOptionPane.showMessageDialog(this, "Please select a row to remove.");

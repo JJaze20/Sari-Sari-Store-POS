@@ -513,11 +513,11 @@ public class AdminPanel extends javax.swing.JFrame {
             ResultSet rs = pst.executeQuery();
             Double trev = 0.0;
             while(rs.next()){
-                trev+=rs.getDouble(3);
+                trev+=rs.getDouble(4);
             }
-            String qtyDisplay = Double.toString(trev);
+            String totalRevenue = Double.toString(trev);
             
-            totalRev.setText("₱ " + qtyDisplay);
+            totalRev.setText("₱ " + totalRevenue);
         }catch(Exception ex){
             System.out.println("Error: " + ex.getMessage());
         }
@@ -529,11 +529,11 @@ public class AdminPanel extends javax.swing.JFrame {
             ResultSet rs = pst.executeQuery();
             int productsSold = 0;
             while(rs.next()){
-                productsSold+=rs.getInt(4);
+                productsSold+=rs.getInt(3);
             }
-            String qtyDisplay = Integer.toString(productsSold);
+            String qtySold = Integer.toString(productsSold);
             
-            prodSold.setText("₱ " + qtyDisplay);
+            prodSold.setText(qtySold);
         }catch(Exception ex){
             System.out.println("Error: " + ex.getMessage());
         }

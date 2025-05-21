@@ -155,6 +155,7 @@ private void fetchDataAndDisplayButtons() {
                     } else if (e.getButton() == MouseEvent.BUTTON1) {  // Detect left-click (BUTTON1)
                         // Automatically add to JTable on left-click
                         addToTable(name, price);  // Add to JTable
+                        
                     }
                 }
             });
@@ -179,15 +180,62 @@ private void fetchDataAndDisplayButtons() {
 private void addToTable(String name, double price) {
     // Assuming jTable1 already has a DefaultTableModel set up
     DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+    
+    double priceOfItem = price;
 
-    // Custom value for quantity
-    int quantity = 1;
+    // Prompt the user to enter the quantity
+    String input = JOptionPane.showInputDialog(this, "Enter quantity for " + name + ":", "Quantity", JOptionPane.PLAIN_MESSAGE);
+    if (input != null && !input.trim().isEmpty()) {
+        try {
+            int quantity = Integer.parseInt(input.trim());
+            if (quantity <= 0) {
+                JOptionPane.showMessageDialog(this, "Quantity must be greater than 0.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
 
-    // Calculate the total amount (price * quantity)
-    double amount = price * quantity;
+            // Calculate total price for the selected quantity
+            double totalPrice = priceOfItem * quantity;
 
-    // Add the item to the JTable with separate values for name, quantity, and amount
-    model.addRow(new Object[]{name, quantity, amount});
+            // Format the price
+            DecimalFormat df = new DecimalFormat("0.00");
+
+            // Get the table model
+            model = (DefaultTableModel) jTable1.getModel();
+
+            // Check if the item already exists in the table
+            boolean itemExists = false;
+            for (int i = 0; i < model.getRowCount(); i++) {
+                String existingItemName = model.getValueAt(i, 0).toString();
+                if (existingItemName.equals(name)) {
+                    // Update the quantity and price for the existing item
+                    int existingQuantity = Integer.parseInt(model.getValueAt(i, 1).toString());
+                    double existingPrice = Double.parseDouble(model.getValueAt(i, 2).toString());
+                    int newQuantity = existingQuantity + quantity;
+                    double newPrice = existingPrice + totalPrice;
+
+                    model.setValueAt(newQuantity, i, 1); // Update quantity
+                    model.setValueAt(df.format(newPrice), i, 2); // Update price
+                    itemExists = true;
+                    break;
+                }
+            }
+
+            // If the item does not exist, add a new row
+            if (!itemExists) {
+                model.addRow(new Object[]{name, quantity, df.format(totalPrice)});
+            }
+
+            // Update the total cost
+            ItemCost();
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid quantity. Please enter a valid number.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } else {
+        // User canceled or entered nothing
+        JOptionPane.showMessageDialog(this, "No quantity entered. Action canceled.", "Info", JOptionPane.INFORMATION_MESSAGE);
+    }
+
 }
     @SuppressWarnings("unchecked")
 

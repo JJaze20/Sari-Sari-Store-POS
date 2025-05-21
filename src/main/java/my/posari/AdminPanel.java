@@ -4,11 +4,10 @@
  */
 package my.posari;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.PreparedStatement;
-import javax.swing.table.DefaultTableModel;
+import java.sql.*;
+import javax.swing.table.*;
+import javax.swing.*;
+
 /**
  *
  * @author user
@@ -20,6 +19,7 @@ public class AdminPanel extends javax.swing.JFrame {
      */
     
     Connection con;
+    JComboBox combobox;
     
     public AdminPanel() {
         initComponents();
@@ -130,6 +130,9 @@ public class AdminPanel extends javax.swing.JFrame {
         jPanel8 = new javax.swing.JPanel();
         refreshButton = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
+        filter = new javax.swing.JComboBox<>();
+        ascDesc = new javax.swing.JButton();
+        jPanel9 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
@@ -141,7 +144,7 @@ public class AdminPanel extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(102, 102, 102));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("SALES REPORT");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -175,6 +178,7 @@ public class AdminPanel extends javax.swing.JFrame {
         );
 
         jButton1.setBackground(new java.awt.Color(102, 102, 102));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("INVENTORY");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -262,15 +266,22 @@ public class AdminPanel extends javax.swing.JFrame {
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("PRODUCTS AVAILABLE");
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("IN STORE");
 
         productsAvail.setEditable(false);
         productsAvail.setBackground(new java.awt.Color(204, 0, 51));
         productsAvail.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        productsAvail.setForeground(new java.awt.Color(255, 255, 255));
+        productsAvail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        productsAvail.setAutoscrolls(false);
         productsAvail.setBorder(null);
         productsAvail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -283,16 +294,13 @@ public class AdminPanel extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel6)
-                .addGap(68, 68, 68))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(productsAvail)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(productsAvail)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(4, 4, 4)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -312,10 +320,15 @@ public class AdminPanel extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(81, 163, 0));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("TOTAL REVENUE");
 
         totalRev.setBackground(new java.awt.Color(81, 163, 0));
         totalRev.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        totalRev.setForeground(new java.awt.Color(255, 255, 255));
+        totalRev.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        totalRev.setAutoscrolls(false);
         totalRev.setBorder(null);
         totalRev.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -327,14 +340,12 @@ public class AdminPanel extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(47, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(45, 45, 45))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(totalRev)
-                .addContainerGap())
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(totalRev, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -351,10 +362,15 @@ public class AdminPanel extends javax.swing.JFrame {
         jPanel7.setBackground(new java.awt.Color(51, 102, 255));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("# OF PRODUCTS SOLD");
 
         prodSold.setBackground(new java.awt.Color(51, 102, 255));
         prodSold.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        prodSold.setForeground(new java.awt.Color(255, 255, 255));
+        prodSold.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        prodSold.setAutoscrolls(false);
         prodSold.setBorder(null);
         prodSold.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -366,14 +382,12 @@ public class AdminPanel extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap(30, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addGap(22, 22, 22))
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(prodSold)
-                .addContainerGap())
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(prodSold, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -387,12 +401,13 @@ public class AdminPanel extends javax.swing.JFrame {
 
         getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 80, 200, -1));
 
+        transHistory.setBackground(new java.awt.Color(224, 224, 224));
         transHistory.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Date of Transaction", "Recipt Number", "No. of Products Sold", "Revenue"
+                "Date of Transaction", "Receipt Number", "No. of Products Sold", "Revenue"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -420,6 +435,19 @@ public class AdminPanel extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("TRANSACTION HISTORY");
 
+        filter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Filter...", "Date", "Receipt No.", "Prods. Sold", "Revenue" }));
+        filter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                filterActionPerformed(evt);
+            }
+        });
+
+        ascDesc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ascDescActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
@@ -427,7 +455,11 @@ public class AdminPanel extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 355, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 173, Short.MAX_VALUE)
+                .addComponent(filter, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ascDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(refreshButton)
                 .addGap(18, 18, 18))
         );
@@ -437,11 +469,29 @@ public class AdminPanel extends javax.swing.JFrame {
                 .addGap(8, 8, 8)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(refreshButton))
-                .addContainerGap(175, Short.MAX_VALUE))
+                    .addComponent(refreshButton)
+                    .addComponent(filter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ascDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(179, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, 640, 210));
+
+        jPanel9.setBackground(new java.awt.Color(232, 232, 232));
+        jPanel9.setForeground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 970, Short.MAX_VALUE)
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 510, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 510));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -453,17 +503,75 @@ public class AdminPanel extends javax.swing.JFrame {
 
     private void refreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshButtonActionPerformed
         // TODO add your handling code here:
-        String sql="SELECT * FROM transactionhistory";
-        try {
-            PreparedStatement pst = con.prepareStatement(sql);
-            ResultSet rs = pst.executeQuery();
+            String option = (String)filter.getSelectedItem();
+            String sql;
             DefaultTableModel model = (DefaultTableModel)transHistory.getModel();
-            while(rs.next()){
-                model.addRow(new Object[]{ rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)});
+            model.setRowCount(0);
+            switch(option){
+                  case "Date":          
+                    try {
+                        sql="SELECT * FROM transactionhistory ORDER BY transact_date";
+                        PreparedStatement pst = con.prepareStatement(sql);
+                        ResultSet rs = pst.executeQuery();  
+                        while(rs.next()){
+                            model.addRow(new Object[]{ rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)});
+                        }
+                    }catch(Exception ex){
+                        System.out.println("Error: " + ex.getMessage());
+                    }
+                    break;
+                case "Receipt No.":
+                    try {
+                        sql="SELECT * FROM transactionhistory ORDER BY receipt_id";
+                        PreparedStatement pst = con.prepareStatement(sql);
+                        ResultSet rs = pst.executeQuery();
+                        while(rs.next()){
+                            model.addRow(new Object[]{ rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)});
+                        }
+                    }catch(Exception ex){
+                        System.out.println("Error: " + ex.getMessage());
+                    }
+                    break;
+                case "Prods. Sold":
+                    try {
+                        sql="SELECT * FROM transactionhistory ORDER BY prods_sold";
+                        PreparedStatement pst = con.prepareStatement(sql);
+                        ResultSet rs = pst.executeQuery();
+                        while(rs.next()){
+                            model.addRow(new Object[]{ rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)});
+                        }
+                    }catch(Exception ex){
+                        System.out.println("Error: " + ex.getMessage());
+                    }
+                    break;
+                case "Revenue":
+                    sql="SELECT * FROM transactionhistory ORDER BY total_revenue";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(sql);
+                        ResultSet rs = pst.executeQuery();
+                        while(rs.next()){
+                            model.addRow(new Object[]{ rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)});
+                        }
+                    }catch(Exception ex){
+                        System.out.println("Error: " + ex.getMessage());
+                    }
+                    break;
+                        
+                default: 
+                        try {
+                            sql="SELECT * FROM transactionhistory";
+                            PreparedStatement pst = con.prepareStatement(sql);
+                            ResultSet rs = pst.executeQuery();  
+                            model = (DefaultTableModel)transHistory.getModel();
+                            while(rs.next()){
+                                model.addRow(new Object[]{ rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)});
+                            }
+                        }catch(Exception ex){
+                            System.out.println("Error: " + ex.getMessage());
+                        }
+                        break;
             }
-        }catch(Exception ex){
-            System.out.println("Error: " + ex.getMessage());
-        }
+        
     }//GEN-LAST:event_refreshButtonActionPerformed
 
     private void jHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jHomeActionPerformed
@@ -539,6 +647,15 @@ public class AdminPanel extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_mainRefreshButtonActionPerformed
 
+    private void filterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filterActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_filterActionPerformed
+
+    private void ascDescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ascDescActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ascDescActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -575,6 +692,8 @@ public class AdminPanel extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ascDesc;
+    private javax.swing.JComboBox<String> filter;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jHome;
     private javax.swing.JLabel jLabel1;
@@ -592,6 +711,7 @@ public class AdminPanel extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton mainRefreshButton;
     private javax.swing.JTextField prodSold;

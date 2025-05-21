@@ -267,7 +267,7 @@ public class posariSignup extends javax.swing.JFrame {
 
         // Method to check if the username already exists in the database
         private boolean isUsernameTaken(String username) {
-            String query = "SELECT COUNT(*) FROM users WHERE username = ?";
+            String query = "SELECT COUNT(*) FROM users2 WHERE username = ?";
 
             try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
                 PreparedStatement statement = connection.prepareStatement(query)) {
@@ -294,7 +294,7 @@ public class posariSignup extends javax.swing.JFrame {
     }//GEN-LAST:event_jPasswordField1ActionPerformed
       private void saveUserToDatabase(String username, String hashedPassword) {
     try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
-        String query = "INSERT INTO users (username, hashed_password) VALUES (?, ?)";
+        String query = "INSERT INTO users2 (username, hashed_password) VALUES (?, ?)";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, username); // Set username parameter
             statement.setString(2, hashedPassword); // Set hashed password parameter

@@ -28,6 +28,7 @@ public class InventoryPanel extends javax.swing.JFrame {
         initComponents();
         loadDataFromDatabase();
         txtSave.setEnabled(false);
+        jTax.setEditable(false);
 
         // Add list selection listener for your inventory table (already in your code)
         jInventory.getSelectionModel().addListSelectionListener(e -> {
@@ -272,6 +273,7 @@ public class InventoryPanel extends javax.swing.JFrame {
         Name4 = new java.awt.Label();
         jTax = new javax.swing.JTextField();
         jRefresh = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -387,6 +389,13 @@ public class InventoryPanel extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setText("jButton2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -408,7 +417,10 @@ public class InventoryPanel extends javax.swing.JFrame {
                                 .addGap(30, 30, 30)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(Name3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTax, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jTax, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(Name1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -464,7 +476,8 @@ public class InventoryPanel extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtReset))
+                            .addComponent(txtReset)
+                            .addComponent(jButton2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtUpdate)
@@ -560,16 +573,19 @@ public class InventoryPanel extends javax.swing.JFrame {
     private void txtUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUpdateActionPerformed
         // TODO add your handling code here:
          // Retrieve updated values from text fields
-    String productID = txtID.getText().trim();
-    String name = txtName.getText().trim();
-    String priceStr = txtPrice.getText().trim();
-    String taxStr = jTax.getText().trim();
+        jTax.setEditable(false);
+        String productID = txtID.getText().trim();
+        String name = txtName.getText().trim();
+        String priceStr = txtPrice.getText().trim();
+        Double tax = Float.parseFloat(priceStr)*0.12;
+        String taxStr = Double.toString(tax);
+    
+    
     int quantity = (int) jspinQuantity.getValue();
 
     // Validate input (e.g., check if price and tax are valid numbers)
     try {
         double price = Double.parseDouble(priceStr);
-        double tax = Double.parseDouble(taxStr);
 
         // Update the database with the new data
         String updateQuery = "UPDATE inventory SET Name = ?, Price = ?, Tax = ?, Qty = ? WHERE ID = ?";
@@ -606,6 +622,14 @@ public class InventoryPanel extends javax.swing.JFrame {
     }
         
     }//GEN-LAST:event_txtUpdateActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        String priceStr = txtPrice.getText().trim();
+        Double tax = Float.parseFloat(priceStr)*0.12;
+        String taxStr = Double.toString(tax);
+        jTax.setText(taxStr);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -649,6 +673,7 @@ public class InventoryPanel extends javax.swing.JFrame {
     private java.awt.Label Name3;
     private java.awt.Label Name4;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JTable jInventory;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

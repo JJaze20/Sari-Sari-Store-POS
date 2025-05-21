@@ -278,7 +278,7 @@ public class AdminPass extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private boolean canAddMoreAdmins() {
-    String query = "SELECT COUNT(*) FROM admin WHERE AdminPassword IS NOT NULL";
+    String query = "SELECT COUNT(*) FROM admin2 WHERE AdminPassword IS NOT NULL";
 
     try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
          PreparedStatement statement = connection.prepareStatement(query);
@@ -320,7 +320,7 @@ public class AdminPass extends javax.swing.JFrame {
 });
     }//GEN-LAST:event_jButton3ActionPerformed
       private void saveAdminPasswordToDatabase(String hashedPassword) {
-    String query = "INSERT INTO admin (AdminPassword) VALUES (?)";
+    String query = "INSERT INTO admin2 (AdminPassword) VALUES (?)";
 
     try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
          PreparedStatement statement = connection.prepareStatement(query)) {

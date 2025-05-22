@@ -3,12 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package my.posari;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.text.DecimalFormat;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JOptionPane;
@@ -28,7 +23,6 @@ public class InventoryPanel extends javax.swing.JFrame {
         initComponents();
         loadDataFromDatabase();
         txtSave.setEnabled(false);
-        jTax.setEditable(false);
 
         // Add list selection listener for your inventory table (already in your code)
         jInventory.getSelectionModel().addListSelectionListener(e -> {
@@ -41,7 +35,6 @@ public class InventoryPanel extends javax.swing.JFrame {
                 txtID.setText(jInventory.getValueAt(selectedRow, 0).toString());
                 txtName.setText(jInventory.getValueAt(selectedRow, 1).toString());
                 txtPrice.setText(jInventory.getValueAt(selectedRow, 2).toString());
-                jTax.setText(jInventory.getValueAt(selectedRow, 3).toString());
                 jspinQuantity.setValue(Integer.parseInt(jInventory.getValueAt(selectedRow, 4).toString()));
             }
         });
@@ -81,22 +74,7 @@ public class InventoryPanel extends javax.swing.JFrame {
             }
         });
 
-        jTax.getDocument().addDocumentListener(new javax.swing.event.DocumentListener() {
-            @Override
-            public void insertUpdate(javax.swing.event.DocumentEvent e) {
-                checkFields();
-            }
-
-            @Override
-            public void removeUpdate(javax.swing.event.DocumentEvent e) {
-                checkFields();
-            }
-
-            @Override
-            public void changedUpdate(javax.swing.event.DocumentEvent e) {
-                checkFields();
-            }
-        });
+        
 
         jspinQuantity.addChangeListener(e -> checkFields());  // Call checkFields when the quantity changes
     }
@@ -149,7 +127,6 @@ public class InventoryPanel extends javax.swing.JFrame {
         // Check if all fields have valid (non-empty) values and quantity is greater than 0
         if (!txtName.getText().trim().isEmpty() &&
             !txtPrice.getText().trim().isEmpty() &&
-            !jTax.getText().trim().isEmpty() &&
             (int) jspinQuantity.getValue() > 0) {
             txtSave.setEnabled(true);  // Enable Save button
         } else {
@@ -199,16 +176,7 @@ public class InventoryPanel extends javax.swing.JFrame {
             return;
         }
 
-        // Get and validate tax value from jTax
-        String taxInput = jTax.getText().trim();
-        double tax = 0.0;
-        try {
-            tax = Double.parseDouble(taxInput);
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Invalid tax format. Please enter a valid number like 1.23", "Input Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
+        
         // Database operations
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
              PreparedStatement stmtInventory = conn.prepareStatement(queryInventory)) {
@@ -218,7 +186,6 @@ public class InventoryPanel extends javax.swing.JFrame {
             stmtInventory.setString(2, name);   // Name
             stmtInventory.setInt(3, quantity);  // Qty
             stmtInventory.setDouble(4, price);  // Price
-            stmtInventory.setDouble(5, tax);    // Tax
 
             int result = stmtInventory.executeUpdate();
 
@@ -230,7 +197,6 @@ public class InventoryPanel extends javax.swing.JFrame {
                     productID,    // ID
                     name,         // Name
                     price,        // Price
-                    tax,          // Tax
                     quantity      // Quantity
                 });
 
@@ -268,12 +234,9 @@ public class InventoryPanel extends javax.swing.JFrame {
         txtID = new javax.swing.JTextField();
         Name2 = new java.awt.Label();
         txtPrice = new javax.swing.JTextField();
-        Name3 = new java.awt.Label();
         jspinQuantity = new javax.swing.JSpinner();
         Name4 = new java.awt.Label();
-        jTax = new javax.swing.JTextField();
         jRefresh = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -369,30 +332,14 @@ public class InventoryPanel extends javax.swing.JFrame {
             }
         });
 
-        Name3.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
-        Name3.setText("Tax");
-
         Name4.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
         Name4.setText("Price");
-
-        jTax.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTaxActionPerformed(evt);
-            }
-        });
 
         jRefresh.setFont(new java.awt.Font("Segoe UI Black", 2, 14)); // NOI18N
         jRefresh.setText("Refresh");
         jRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRefreshActionPerformed(evt);
-            }
-        });
-
-        jButton2.setText("jButton2");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
             }
         });
 
@@ -410,17 +357,9 @@ public class InventoryPanel extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Name4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(30, 30, 30)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Name3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jTax, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Name4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(Name1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -469,15 +408,11 @@ public class InventoryPanel extends javax.swing.JFrame {
                             .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jspinQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Name3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Name4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Name4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtReset)
-                            .addComponent(jButton2))
+                            .addComponent(txtReset))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtUpdate)
@@ -557,13 +492,7 @@ public class InventoryPanel extends javax.swing.JFrame {
     txtID.setText("");            // Clear the product ID text field
     txtPrice.setText("");         // Clear the price text field
     jspinQuantity.setValue(0);    // Reset the quantity spinner to its default value (1)
-    jTax.setText("");
     }//GEN-LAST:event_txtResetActionPerformed
-
-    private void jTaxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTaxActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jTaxActionPerformed
 
     private void jRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRefreshActionPerformed
         // TODO add your handling code here:
@@ -573,12 +502,9 @@ public class InventoryPanel extends javax.swing.JFrame {
     private void txtUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUpdateActionPerformed
         // TODO add your handling code here:
          // Retrieve updated values from text fields
-        jTax.setEditable(false);
         String productID = txtID.getText().trim();
         String name = txtName.getText().trim();
         String priceStr = txtPrice.getText().trim();
-        Double tax = Float.parseFloat(priceStr)*0.12;
-        String taxStr = Double.toString(tax);
     
     
     int quantity = (int) jspinQuantity.getValue();
@@ -595,9 +521,8 @@ public class InventoryPanel extends javax.swing.JFrame {
             // Set the parameters for the prepared statement
             stmt.setString(1, name);
             stmt.setDouble(2, price);
-            stmt.setDouble(3, tax);
-            stmt.setInt(4, quantity);
-            stmt.setString(5, productID);
+            stmt.setInt(3, quantity);
+            stmt.setString(4, productID);
 
             int result = stmt.executeUpdate();
             
@@ -607,8 +532,7 @@ public class InventoryPanel extends javax.swing.JFrame {
                 int selectedRow = jInventory.getSelectedRow();
                 model.setValueAt(name, selectedRow, 1);
                 model.setValueAt(price, selectedRow, 2);
-                model.setValueAt(tax, selectedRow, 3);
-                model.setValueAt(quantity, selectedRow, 4);
+                model.setValueAt(quantity, selectedRow, 3);
 
                 JOptionPane.showMessageDialog(this, "Record updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
             } else {
@@ -622,14 +546,6 @@ public class InventoryPanel extends javax.swing.JFrame {
     }
         
     }//GEN-LAST:event_txtUpdateActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        String priceStr = txtPrice.getText().trim();
-        Double tax = Float.parseFloat(priceStr)*0.12;
-        String taxStr = Double.toString(tax);
-        jTax.setText(taxStr);
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -670,16 +586,13 @@ public class InventoryPanel extends javax.swing.JFrame {
     private java.awt.Label Name;
     private java.awt.Label Name1;
     private java.awt.Label Name2;
-    private java.awt.Label Name3;
     private java.awt.Label Name4;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JTable jInventory;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jRefresh;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTax;
     private javax.swing.JSpinner jspinQuantity;
     private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtName;

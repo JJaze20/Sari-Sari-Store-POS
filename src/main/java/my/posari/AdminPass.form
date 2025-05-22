@@ -285,7 +285,7 @@
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\peepee\Sari-Sari-Store-POS\src\main\resources\RESIBO.png"/>
+                  <Image iconType="3" name="/images/RESIBO.png"/>
                 </Property>
               </Properties>
             </Component>

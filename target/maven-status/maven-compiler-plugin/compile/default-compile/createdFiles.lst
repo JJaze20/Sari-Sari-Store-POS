@@ -15,6 +15,7 @@ my\posari\PosariMain$7.class
 my\posari\posariSignup$4.class
 my\posari\InventoryPanel$14.class
 my\posari\AdminPanel$9.class
+my\posari\AdminPass$7.class
 my\posari\posariSignup.class
 my\possarisari\posSariSari$1.class
 my\posari\AdminPass$1.class
@@ -35,6 +36,7 @@ my\posari\InventoryPanel$8.class
 my\posari\AdminPass$2.class
 my\posari\PosariMain$9.class
 my\posari\AdminPass$3.class
+my\posari\AdminLog$3.class
 my\posari\AdminPanel$2.class
 my\posari\posariSignup$2.class
 my\posari\PosariMain$6.class
@@ -65,6 +67,7 @@ my\posari\InventoryPanel$10.class
 my\posari\posari$1.class
 my\posari\PosariMain$17.class
 my\posari\AdminPass.class
+my\posari\InventoryPanel$15.class
 my\posari\PosariMain$11.class
 my\posari\AdminPanel$1.class
 my\posari\AdminPanel$8.class

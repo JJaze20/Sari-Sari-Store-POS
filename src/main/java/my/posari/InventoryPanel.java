@@ -274,6 +274,7 @@ public class InventoryPanel extends javax.swing.JFrame {
         jTax = new javax.swing.JTextField();
         jRefresh = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        txtUpdate1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -396,6 +397,14 @@ public class InventoryPanel extends javax.swing.JFrame {
             }
         });
 
+        txtUpdate1.setFont(new java.awt.Font("Lucida Console", 1, 12)); // NOI18N
+        txtUpdate1.setText("Remove");
+        txtUpdate1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUpdate1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -444,6 +453,8 @@ public class InventoryPanel extends javax.swing.JFrame {
                                 .addComponent(txtSave)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtUpdate)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtUpdate1)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -481,7 +492,8 @@ public class InventoryPanel extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtUpdate)
-                            .addComponent(txtSave))
+                            .addComponent(txtSave)
+                            .addComponent(txtUpdate1))
                         .addGap(33, 33, 33))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -631,6 +643,52 @@ public class InventoryPanel extends javax.swing.JFrame {
         jTax.setText(taxStr);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void txtUpdate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUpdate1ActionPerformed
+        // TODO add your handling code here:
+    int selectedRow = jInventory.getSelectedRow();
+
+    if (selectedRow != -1) {
+        // Get the product ID from the selected row (assuming ID is in column 0)
+        String productID = jInventory.getValueAt(selectedRow, 0).toString();
+
+        // Confirm deletion
+        int confirm = JOptionPane.showConfirmDialog(this,
+                "Are you sure you want to delete this item?",
+                "Confirm Deletion", JOptionPane.YES_NO_OPTION);
+
+        if (confirm == JOptionPane.YES_OPTION) {
+            String deleteQuery = "DELETE FROM inventory WHERE ID = ?";
+
+            try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+                 PreparedStatement stmt = conn.prepareStatement(deleteQuery)) {
+
+                stmt.setString(1, productID);
+
+                int result = stmt.executeUpdate();
+
+                if (result > 0) {
+                    // Remove from JTable
+                    DefaultTableModel model = (DefaultTableModel) jInventory.getModel();
+                    model.removeRow(selectedRow);
+
+                    JOptionPane.showMessageDialog(this, "Item removed successfully!",
+                            "Success", JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Failed to delete item.",
+                            "Error", JOptionPane.ERROR_MESSAGE);
+                }
+
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(this, "Database error: " + ex.getMessage(),
+                        "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    } else {
+        JOptionPane.showMessageDialog(this, "Please select an item to delete.",
+                "No Selection", JOptionPane.WARNING_MESSAGE);
+    }
+    }//GEN-LAST:event_txtUpdate1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -687,5 +745,6 @@ public class InventoryPanel extends javax.swing.JFrame {
     private javax.swing.JButton txtReset;
     private javax.swing.JButton txtSave;
     private javax.swing.JButton txtUpdate;
+    private javax.swing.JButton txtUpdate1;
     // End of variables declaration//GEN-END:variables
 }

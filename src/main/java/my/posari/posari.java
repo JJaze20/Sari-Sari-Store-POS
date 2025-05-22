@@ -231,7 +231,7 @@ public class posari extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
     
     private boolean authenticateUser(String username, String password) {
-        String query = "SELECT hashed_password FROM users2 WHERE username = ?";
+        String query = "SELECT hashed_password FROM users WHERE username = ?";
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
              PreparedStatement stmt = conn.prepareStatement(query)) {
             

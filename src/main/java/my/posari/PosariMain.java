@@ -149,12 +149,12 @@ private void fetchDataAndDisplayButtons() {
                         );
 
                         if (option == 1) {  // If "Add" button is pressed
-                            addToTable(name, price);  // Add to JTable
+                            addToTable(name, price, quantity);  // Add to JTable
                             
                         }
                     } else if (e.getButton() == MouseEvent.BUTTON1) {  // Detect left-click (BUTTON1)
                         // Automatically add to JTable on left-click
-                        addToTable(name, price);  // Add to JTable
+                        addToTable(name, price, quantity);  // Add to JTable
                         
                     }
                 }
@@ -177,65 +177,86 @@ private void fetchDataAndDisplayButtons() {
 }
 
 // Function to add item to JTable
-private void addToTable(String name, double price) {
-    // Assuming jTable1 already has a DefaultTableModel set up
+private void addToTable(String name, double price, int availableStock) {
     DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-    
     double priceOfItem = price;
 
-    // Prompt the user to enter the quantity
-    String input = JOptionPane.showInputDialog(this, "Enter quantity for " + name + ":", "Quantity", JOptionPane.PLAIN_MESSAGE);
+    String input = JOptionPane.showInputDialog(this, "Enter quantity for " + name + " (Available: " + availableStock + "):", "Quantity", JOptionPane.PLAIN_MESSAGE);
     if (input != null && !input.trim().isEmpty()) {
         try {
             int quantity = Integer.parseInt(input.trim());
+
             if (quantity <= 0) {
                 JOptionPane.showMessageDialog(this, "Quantity must be greater than 0.", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
-            // Calculate total price for the selected quantity
-            double totalPrice = priceOfItem * quantity;
+            if (quantity > availableStock) {
+                JOptionPane.showMessageDialog(this, 
+                    "Not enough " + name + ". Please restock.\nAvailable: " + availableStock + ", Requested: " + quantity,
+                    "Stock Error",
+                    JOptionPane.WARNING_MESSAGE);
+                return;
+            }
 
-            // Format the price
+            double totalPrice = priceOfItem * quantity;
             DecimalFormat df = new DecimalFormat("0.00");
 
-            // Get the table model
-            model = (DefaultTableModel) jTable1.getModel();
-
-            // Check if the item already exists in the table
             boolean itemExists = false;
             for (int i = 0; i < model.getRowCount(); i++) {
                 String existingItemName = model.getValueAt(i, 0).toString();
                 if (existingItemName.equals(name)) {
-                    // Update the quantity and price for the existing item
                     int existingQuantity = Integer.parseInt(model.getValueAt(i, 1).toString());
                     double existingPrice = Double.parseDouble(model.getValueAt(i, 2).toString());
                     int newQuantity = existingQuantity + quantity;
-                    double newPrice = existingPrice + totalPrice;
 
-                    model.setValueAt(newQuantity, i, 1); // Update quantity
-                    model.setValueAt(df.format(newPrice), i, 2); // Update price
+                    if (newQuantity > availableStock) {
+                        JOptionPane.showMessageDialog(this,
+                            "Total quantity of " + name + " exceeds stock.\nAvailable: " + availableStock + ", Attempted Total: " + newQuantity,
+                            "Stock Error",
+                            JOptionPane.WARNING_MESSAGE);
+                        return;
+                    }
+
+                    double newPrice = existingPrice + totalPrice;
+                    model.setValueAt(newQuantity, i, 1);
+                    model.setValueAt(df.format(newPrice), i, 2);
                     itemExists = true;
                     break;
                 }
             }
 
-            // If the item does not exist, add a new row
             if (!itemExists) {
                 model.addRow(new Object[]{name, quantity, df.format(totalPrice)});
             }
 
-            // Update the total cost
-            ItemCost();
+            // ✅ Deduct purchased quantity from database
+            try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+                 PreparedStatement pstmt = conn.prepareStatement("UPDATE inventory SET Qty = Qty - ? WHERE Name = ?")) {
+
+                pstmt.setInt(1, quantity);
+                pstmt.setString(2, name);
+                int rowsAffected = pstmt.executeUpdate();
+
+                if (rowsAffected > 0) {
+                    System.out.println("Stock updated in database.");
+                } else {
+                    System.out.println("Stock update failed or item not found.");
+                }
+
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(this, "Failed to update inventory: " + e.getMessage(), "Database Error", JOptionPane.ERROR_MESSAGE);
+                e.printStackTrace();
+            }
+
+            ItemCost(); // Recalculate total
 
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Invalid quantity. Please enter a valid number.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     } else {
-        // User canceled or entered nothing
         JOptionPane.showMessageDialog(this, "No quantity entered. Action canceled.", "Info", JOptionPane.INFORMATION_MESSAGE);
     }
-
 }
     @SuppressWarnings("unchecked")
 

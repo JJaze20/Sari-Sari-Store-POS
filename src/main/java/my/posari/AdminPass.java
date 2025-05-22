@@ -40,6 +40,7 @@ public class AdminPass extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jPasswordField2 = new javax.swing.JPasswordField();
         jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -112,6 +113,16 @@ public class AdminPass extends javax.swing.JFrame {
             }
         });
 
+        jButton4.setBackground(new java.awt.Color(242, 242, 242));
+        jButton4.setForeground(new java.awt.Color(227, 48, 84));
+        jButton4.setText("Go Back");
+        jButton4.setBorder(null);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout RightCoverPageLayout = new javax.swing.GroupLayout(RightCoverPage);
         RightCoverPage.setLayout(RightCoverPageLayout);
         RightCoverPageLayout.setHorizontalGroup(
@@ -119,21 +130,23 @@ public class AdminPass extends javax.swing.JFrame {
             .addGroup(RightCoverPageLayout.createSequentialGroup()
                 .addGap(63, 63, 63)
                 .addGroup(RightCoverPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(RightCoverPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel1)
-                        .addComponent(jLabel2)
-                        .addComponent(jLabel3)
-                        .addComponent(jPasswordField2, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
-                        .addComponent(jPasswordField1))
                     .addGroup(RightCoverPageLayout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3)
-                        .addGap(26, 26, 26)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)))
-                .addContainerGap(56, Short.MAX_VALUE))
+                        .addComponent(jButton3))
+                    .addGroup(RightCoverPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(RightCoverPageLayout.createSequentialGroup()
+                            .addComponent(jLabel4)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jButton2))
+                        .addGroup(RightCoverPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jPasswordField2, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
+                            .addComponent(jPasswordField1))
+                        .addComponent(jButton4)))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
         RightCoverPageLayout.setVerticalGroup(
             RightCoverPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,15 +163,18 @@ public class AdminPass extends javax.swing.JFrame {
                 .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(RightCoverPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jButton2)
                     .addComponent(jButton3)
                     .addComponent(jButton1))
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(RightCoverPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jButton2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton4)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\peepee\\Sari-Sari-Store-POS\\src\\main\\resources\\RESIBO.png")); // NOI18N
 
         javax.swing.GroupLayout LeftCoverPageLayout = new javax.swing.GroupLayout(LeftCoverPage);
         LeftCoverPage.setLayout(LeftCoverPageLayout);
@@ -278,7 +294,7 @@ public class AdminPass extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private boolean canAddMoreAdmins() {
-    String query = "SELECT COUNT(*) FROM admin2 WHERE AdminPassword IS NOT NULL";
+    String query = "SELECT COUNT(*) FROM admin WHERE AdminPassword IS NOT NULL";
 
     try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
          PreparedStatement statement = connection.prepareStatement(query);
@@ -319,6 +335,15 @@ public class AdminPass extends javax.swing.JFrame {
     }
 });
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        PosariMain mainFrame = new PosariMain();
+            mainFrame.setVisible(true);
+            mainFrame.pack();
+            mainFrame.setLocationRelativeTo(null);
+            this.dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
       private void saveAdminPasswordToDatabase(String hashedPassword) {
     String query = "INSERT INTO admin2 (AdminPassword) VALUES (?)";
 
@@ -344,6 +369,7 @@ public class AdminPass extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

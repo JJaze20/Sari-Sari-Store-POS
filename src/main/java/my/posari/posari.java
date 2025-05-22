@@ -3,10 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package my.posari;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import javax.swing.JOptionPane;
 /**
  *
@@ -237,7 +234,7 @@ public class posari extends javax.swing.JFrame {
             
             stmt.setString(1, username);
             ResultSet rs = stmt.executeQuery();
-            
+        
             if (rs.next()) {
                 String storedHashedPassword = rs.getString("hashed_password"); 
                 

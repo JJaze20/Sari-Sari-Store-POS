@@ -1,9 +1,6 @@
 package my.posari;
-import java.sql.ResultSet;
 import javax.swing.JOptionPane;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
+import java.sql.*;
 
 
 public class posariSignup extends javax.swing.JFrame {
@@ -84,7 +81,7 @@ public class posariSignup extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(25, 50, 92));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Login");
+        jButton1.setText("SignUp");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

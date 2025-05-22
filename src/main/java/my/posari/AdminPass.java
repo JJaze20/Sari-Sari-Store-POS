@@ -158,7 +158,7 @@ public class AdminPass extends javax.swing.JFrame {
         );
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\peepee\\Sari-Sari-Store-POS\\src\\main\\resources\\RESIBO.png")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/RESIBO.png"))); // NOI18N
 
         javax.swing.GroupLayout LeftCoverPageLayout = new javax.swing.GroupLayout(LeftCoverPage);
         LeftCoverPage.setLayout(LeftCoverPageLayout);

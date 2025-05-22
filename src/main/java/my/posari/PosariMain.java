@@ -118,7 +118,6 @@ private void fetchDataAndDisplayButtons() {
             int id = rs.getInt("ID");  // Column name should match the actual column name in your database
             String name = rs.getString("Name");
             double price = rs.getDouble("Price");
-            double tax = rs.getDouble("Tax");
             int quantity = rs.getInt("Qty");  // Correct column name based on your schema
 
             // Create a button for each product
@@ -140,7 +139,6 @@ private void fetchDataAndDisplayButtons() {
                             "Product ID: " + id + "\n" +
                             "Name: " + name + "\n" +
                             "Price: " + price + "\n" +
-                            "Tax: " + tax + "\n" +
                             "Quantity: " + quantity,
                             "Product Details",
                             JOptionPane.DEFAULT_OPTION,
